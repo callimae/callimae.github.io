@@ -1,0 +1,58 @@
+.card {
+    width: 210px;
+    height: 260px;
+    background-image: var(--card-background);
+    box-shadow: 7px 7px 35px #0000009a,
+                -7px -7px 35px #69696941;
+    transition: border-radius cubic-bezier(0.075, 0.82, 0.165, 1) 0.5s,
+                transform cubic-bezier(0.075, 0.82, 0.165, 1) 0.5s;         
+    border-radius: 10px;
+    padding: 0px;
+    text-align: center;
+    margin: 25px 25px;
+}
+
+.card-wide {
+    width: 330px; /* Na przykład */
+}
+
+.card-tall {
+    height: 300px; /* Na przykład */
+}
+
+.card:hover {
+    border-bottom-right-radius: 50px;
+    border-top-left-radius: 50px;
+    transform: scale(1.15);
+}
+
+.card img {
+    width: 120px;
+    height: 120px;
+    margin: 12px auto;
+    transform: translate(0%, -0%);
+    transition: transform 0.5s;
+    border-bottom: 1px solid #ddd; /* Dodaje granicę pomiędzy obrazem a treścią */
+}
+
+.card:hover img {
+    transform: translate(0%, 0%);
+}
+
+.card-title {
+    font-size: 24px;
+}
+
+.day-mode .card-title {
+    color: rgb(255, 255, 255);
+}
+
+.night-mode .card-title{
+    color: rgb(255, 255, 255);
+}
+
+.card-description {
+    font-size: 16px;
+    color: #ebebeb;
+}
+

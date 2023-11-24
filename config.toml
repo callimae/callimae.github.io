@@ -1,0 +1,48 @@
+
+baseURL="//callimae.github.io/"
+title = "R-stuff"
+
+[[menu.main]]
+name = "News"
+url = "/news"
+weight = 1
+[[menu.main]]
+name = "Courses"
+url = "/courses"
+weight = 2
+[[menu.main]]
+name = "Algorithms"
+url = "/algorithms"
+weight = 3
+[[menu.main]]
+name = "Tutorials"
+url = "/tutorials"
+weight = 4
+[[menu.main]]
+name = "About"
+url = "/about"
+weight = 5
+[[menu.main]]
+name = "Authors"
+url = "/authors"
+parent = "About"
+weight = 6
+
+[params]
+mainSections = ["news", "algorithms", "courses", "tutorials", "about"]
+
+[params.seo]
+title = "Your R and Data Science Hub"
+description = "Explore the world of R and data science with the latest news, courses, and tutorials."
+
+[outputs]
+home = ["HTML", "RSS", "JSON"]
+
+[markup]
+[markup.tableOfContents]
+startLevel = 1
+endLevel = 4
+ordered = false
+[markup.highlight]
+style = "nord"
+codeFences = true

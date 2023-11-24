@@ -1,0 +1,62 @@
+<header class="bg-white p-4 site-header">
+    <div class="container mx-auto">
+        <div class="flex justify-between items-center">
+            <!-- Sekcja lewa: Logo -->
+            <div class="logo">
+                <a href="/" class="text-xl font-bold text-black small-caps tracking-wider nav-link">{{ .Site.Title }}</a>
+            </div>
+            
+            <!-- Sekcja środkowa: Menu -->
+            <div class="flex-space">
+                <nav>
+                    <ul class="flex justify-center text-xl space-x-6">
+                        {{ $mainContext := . }}
+                        {{ range $.Site.Menus.main }}
+                        <li class="group relative inline-block">
+                                <a href="{{ .URL }}" class="nav-link">{{ .Name }}</a>
+                                <div class="invisible h-1 w-full"></div> 
+                                {{ $sectionName := lower .Name }}
+                                {{ $allPages := where $mainContext.Site.RegularPages "Section" $sectionName }}
+                                {{ if gt (len $allPages) 0 }}
+                                    
+                                        <div id="dropdownContent" class="absolute left-0 mt-2 w-48 bg-white border border-gray-300 rounded-md shadow-lg transition-opacity duration-200">    
+                                            {{ $categories := slice }}
+                                        {{ range $allPages }}
+                                        {{ $categories = $categories | union .Params.categories }}
+                                        {{ end }}
+                                        
+                                        {{ range $categories }}
+                                            <div class="category-container relative group">
+                                                <a href="#{{ . | urlize }}" class="category-link block px-4 py-2 text-gray-700 hover:bg-gray-100">{{ . }}</a>
+                                                
+                                                {{ $category := . }}
+                                                {{ $pages := where $allPages "Params.categories" "intersect" (slice $category) }}
+                                                <div class="titles-list absolute left-full top-0 w-48 bg-white border border-gray-300 rounded-md shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+                                                    {{ range $pages }}
+                                                    <a href="{{ .RelPermalink }}" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">{{ .Title }}</a>
+                                                    {{ end }}
+                                                </div>
+                                            </div>
+                                        {{ end }}
+                                    </div>
+                                    {{ end }}
+                                </li>
+                        {{ end }}
+                    </ul>
+                    
+                    
+                </nav>
+            </div>
+            <!-- Sekcja prawa: Wyszukiwanie i przełącznik trybu dzienny/nocny -->
+            <div class="search-bar flex items-center space-x-4">
+                <!-- Pole wyszukiwania -->
+                {{ partial "search-form.html" . }}
+
+                <!-- Przełącznik trybu dzienny/nocny -->
+                <button id="themeToggle" class="p-2 border rounded">Day/Night</button>
+            </div>
+        </div>
+    </div>
+    <div id="progress-bar"></div>
+
+</header>

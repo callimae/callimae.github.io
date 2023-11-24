@@ -1,0 +1,33 @@
+
+    <div clas="">
+        <!-- Image -->
+        {{ with .Params.image }}
+            <img src="{{ . }}" alt="{{ $.Title }}">
+        {{ else }}
+            <img src="/path/to/default/image.jpg" alt="Default Image">
+        {{ end }}
+    
+        <!-- Title -->
+        <h5 class="card-title">{{ .Title }}</h5>
+    
+        <!-- Description -->
+        <p class="card-description">{{ .Params.description }}</p>
+    
+        <!-- Author and Tags -->
+        {{/*  <div class="author-and-tags">
+            <!-- Author Image -->
+            {{ $author := index (where .Site.Pages "Params.title" .Params.author) 0 }}
+            {{ with $author.Params.avatar }}
+                <img src="{{ . }}" class="author-image" alt="{{ $author.Title }}">
+            {{ else }}
+                <p>No avatar for author.</p>
+            {{ end }}
+    
+            <!-- Tags -->
+            <div class="tags">
+                {{ range .Params.tags }}
+                    <span class="tag">{{ . }}</span>
+                {{ end }}
+            </div>
+        </div>  */}}
+    </div>

@@ -1,0 +1,16 @@
+{{ define "main" }}
+  <div class="box">
+    <h1>{{ .Title }}</h1>
+  </div>
+  <div class="content-box grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+    {{ range .Pages }}
+      <div class="rectangle-item">
+        <a href="{{ .RelPermalink }}" class="rectangle-link">
+          <h2>{{ .Title }}</h2>
+          <p>{{ .Params.description }}</p>
+        </a>
+      </div>
+    {{ end }}
+  </div>
+{{ end }}
+  

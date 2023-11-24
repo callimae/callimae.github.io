@@ -1,0 +1,59 @@
+<div id="search-container" style="position:relative;">
+  <form id="search" action="javascript:void(0);">
+      <label hidden for="search-input">Search site</label>
+      <input type="text" id="search-input" name="query" placeholder="Type here to search" autocomplete="off">
+      <button type="submit" id="search-submit">
+          <i class="fas fa-search"></i>
+      </button>
+  </form>
+  <div id="results" style="display:none; position:absolute; top:100%; left:0; right:0; background-color: #fff; border: 1px solid #ccc; border-radius: 4px; z-index: 1000;"></div>
+</div>
+
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', (event) => {
+  const searchContainer = document.getElementById('search-container');
+  const searchInput = document.getElementById('search-input');
+  const resultsContainer = document.getElementById('results');
+
+  let data;
+
+  fetch('/index.json')
+    .then(response => response.json())
+    .then(jsonData => {
+      data = jsonData;
+      const idx = lunr(function () {
+        this.ref('uri');
+        this.field('title');
+        this.field('content');
+        this.field('description');
+        this.field('categories');
+        data.forEach(doc => {
+          this.add(doc);
+        });
+      });
+
+      searchInput.addEventListener('input', function () {
+        const query = this.value;
+        if (query) {  // Dodanie tego warunku
+            const results = idx.search(query);
+            resultsContainer.style.display = results.length ? 'block' : 'none';
+            resultsContainer.innerHTML = results.map(result => {
+                const item = data.find(item => item.uri === result.ref);
+                return `<li><a href="${item.uri}">${item.title}</a></li>`;
+            }).join('');
+        } else {  // Jeśli zapytanie jest puste, ukryj kontener wyników
+            resultsContainer.style.display = 'none';
+        }
+    });
+    })
+    .catch(error => console.error('Error fetching JSON data:', error));
+
+  document.addEventListener('click', function(event) {
+      const isClickInside = searchContainer.contains(event.target);
+
+      if (!isClickInside) {
+          resultsContainer.style.display = 'none';
+      }
+  });
+});
+</script>

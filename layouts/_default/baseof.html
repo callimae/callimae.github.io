@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Definiowanie podstawowego zestawu znaków dla dokumentu -->
+  <meta charset="UTF-8" />
+  <!-- Ustawienie widoku na skalowanie 1:1 i dopasowanie do szerokości urządzenia -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Ustawienie tytułu strony na wartość zdefiniowaną w konfiguracji Hugo -->
+  <title>{{ .Site.Title }}</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.18.2/tocbot.css" />
+
+  <!-- Załączanie Tailwind CSS z CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
+  <!-- MathJax library -->
+  <script type="text/javascript" async
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+  <!-- Vue library -->
+  <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+
+  <script src="https://unpkg.com/alpinejs" defer></script>
+
+  <!-- Załączanie głównego arkusza stylów -->
+  <link rel="stylesheet" href="/css/style.css" />
+
+  <!-- Icons -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+  <!-- Załączanie bibliotek skryptów -->
+
+  {{ partial "scripts-libraries.html" . }}
+</head>
+
+<body class="night-mode">
+  <!-- Wstawienie zawartości pliku header.html z katalogu layouts/partials -->
+  {{ partial "header.html" . }}
+  <main>
+    <!-- Główna zawartość strony -->
+    {{ block "main" . }}{{ end }}
+  </main>
+  <!-- Wstawienie zawartości pliku footer.html z katalogu layouts/partials -->
+  {{ partial "footer.html" . }}
+  <!-- Załączanie niestandardowych skryptów -->
+  {{ partial "scripts-custom.html" . }}
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.18.2/tocbot.min.js"></script>
+</body>
+
+</html>

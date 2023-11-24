@@ -1,0 +1,26 @@
+{{ define "main" }}
+<html lang="eng">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Twoja strona</title>
+    <style>
+        :root {
+            --dynamic-gradient-border: linear-gradient(to right, rgb(93, 0, 180), rgba(180, 0, 171, 0.906), rgb(93, 0, 180));
+            --dynamic-gradient-border-width: 10px;
+            --card-background: linear-gradient(45deg, rgb(132, 0, 255), rgba(255, 7, 243, 0.906), rgb(170, 79, 255));
+        }
+    </style>
+</head>
+<body>
+    <div class="box gradient-border">
+        <h1>{{ .Title }}</h1>
+    </div>
+
+<ul id="results">
+    <li>
+        Enter a keyword above to search this site.
+    </li>
+</ul>
+</body>
+{{ end }}

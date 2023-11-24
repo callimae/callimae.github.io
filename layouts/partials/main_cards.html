@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    {{ $scss := resources.Get "scss/main_cards.scss" }}
+    {{ $style := $scss | resources.ToCSS }}
+    <link rel="stylesheet" href="{{ $style.Permalink }}">
+    
+</head>
+<body class="">
+
+
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+<div class="content-wrapper">
+   
+   <!-- Pierwszy rząd: 3 karty -->
+   <div class="content">
+      <!-- Karta Courses -->
+      <div class="card courses-card gradient-border">
+         <div class="icon"><i class="material-icons md-36">class</i></div>
+         <p class="title">Courses</p>
+         <p class="text">Full courses from beginner to advanced in R and bioinformatics. A comprehensive approach.</p>
+      </div>
+      
+      <!-- Karta Algorithms -->
+      <div class="card algorithms-card gradient-border">
+         <div class="icon"><i class="material-icons md-36">settings</i></div>
+         <p class="title">Algorithms</p>
+         <p class="text">Algorithms ranging from basic sorting to advanced machine learning.</p>
+      </div>
+      
+      <!-- Karta Tutorials -->
+      <div class="card tutorials-card gradient-border">
+         <div class="icon"><i class="material-icons md-36">school</i></div>
+         <p class="title">Tutorials</p>
+         <p class="text">Mixed topics, short and long, covering small to large concepts.</p>
+      </div>
+   </div>
+   
+   <!-- Drugi rząd: 2 karty -->
+   <div class="content">
+      <!-- Karta News -->
+      <div class="card news-card gradient-border">
+         <div class="icon"><i class="material-icons md-36">article</i></div>
+         <p class="title">News</p>
+         <p class="text">Latest news, including upcoming courses.</p>
+      </div>
+      
+      <!-- Karta About -->
+      <div class="card about-card gradient-border">
+         <div class="icon"><i class="material-icons md-36">info</i></div>
+         <p class="title">About</p>
+         <p class="text">About the authors, the site, and contact information.</p>
+      </div>
+      
+   </div>
+</div>
+</body>
+</html>

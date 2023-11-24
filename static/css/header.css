@@ -1,0 +1,135 @@
+/* Header */
+.site-header {
+    color: black !important;
+    width: 100%; /* Rozciąga nagłówek na całą szerokość strony */
+    position: fixed; /* Utrzymuje nagłówek na górze strony podczas przewijania */
+    top: 0; /* Umieszcza nagłówek na samej górze strony */
+    left: 0; /* Umieszcza nagłówek na lewej stronie */
+    z-index: 1000; /* Upewnia się, że nagłówek jest zawsze na wierzchu */
+}
+
+
+.nav-link {
+    transition: transform 0.3s ease;
+    display: inline-block;
+}
+
+.nav-link:hover {
+    transform: scale(1.15);
+}
+
+.fixed-header {
+    background-color: #ffffff !important; /* Biały */
+    color: #000000 !important; /* Czarny */
+}
+.night-mode .fixed-header {
+    background-color: #ffffff !important; /* Biały */
+    color: #000000 !important; /* Czarny */
+}
+
+/* Header layout */
+.logo, .flex-space, .search-bar{
+    width: 100%;
+}
+
+@media (min-width: 769px) {
+    .logo {
+        width: 20%;
+    }
+
+    .flex-space {
+        width: 60%;
+    }
+
+    .search-bar {
+        width: 20%;
+    }
+}
+
+/* Styl dla daty */
+
+.grid-container {
+    display: none; /* ukryj początkowo */
+    grid-template-columns: repeat(3, 1fr); /* 3 kolumny */
+    grid-gap: 10px; /* odstęp między elementami */
+    overflow-y: auto; /* włącz przewijanie wertykalne */
+}
+
+.custom-container {
+    max-width: 100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Dla loga */
+.logo a {
+    transition: color 0.3s; /* płynne przejście koloru */
+}
+
+.logo a:hover {
+    color: #FF6347; /* Przykładowy kolor hover dla loga */
+}
+
+/* Dla menu */
+nav ul li a {
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #FF6347;
+}
+
+/* Dla pola wyszukiwania i przycisku */
+.search-bar input, .search-bar button {
+    /* Spójność czcionki */
+}
+
+/* Dla przełącznika motywu */
+#themeToggle {
+    background: url('path_to_icon.png') no-repeat; /* Jeśli chcesz dodać ikonę */
+}
+
+/* Styl dla rozwijanego menu */n
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+.titles-list {
+    opacity: 0;
+    transition: opacity 0.3s 0.2s, visibility 0.3s; 
+    visibility: hidden;
+    position: absolute;
+    top: 0;
+    left: 100%;  /* pozycjonowanie menu z tytułami bezpośrednio po prawej stronie kategorii */
+    z-index: 10;
+}
+
+.category-container:hover .titles-list {
+    opacity: 1;
+    visibility: visible;
+    transition-delay: 0s;
+}
+
+#dropdownContent {
+    opacity: 0;
+    visibility: hidden;
+}
+
+li:hover #dropdownContent {
+    opacity: 1;
+    visibility: visible;
+}
+
+.absolute {
+    /* ... */
+    margin: -5px;      /* przeciwdziała dodatkowemu obszarowi dodanemu przez padding, aby uniknąć przesunięcia treści */
+    background-clip: content-box; /* zapewnia, że tło nie rozciąga się na obszar paddingu */
+}
+
+header {
+    position: relative; /* jeśli już nie masz tego ustawienia */
+}

@@ -1,0 +1,66 @@
+/* Styl tabeli */
+table {
+    border-collapse: collapse;
+    width: 55%;
+    border-spacing: 0;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+th, td {
+    padding: 8px;
+    text-align: center;
+}
+
+/* Tryb dzienny */
+.day-mode {
+    --header-bg-color: rgba(151, 151, 151, 0.64);  /* Półprzezroczysty szary kolor tła nagłówka */
+}
+
+.day-mode table {
+    background-color: white;  /* Biały kolor tła tabeli */
+    color: black;  /* Czarny kolor tekstu tabeli */
+}
+
+.day-mode th {
+    background-color: var(--header-bg-color);
+}
+
+.day-mode td {
+    border-top: 1px solid rgba(0, 0, 0, 0.5);
+}
+
+.day-mode tr:last-child td {
+    border-bottom: none;
+}
+
+/* Tryb nocny */
+.night-mode {
+    --header-bg-color: rgba(255, 255, 255, 0.16);  /* Półprzezroczysty czarny kolor tła nagłówka */
+}
+
+.night-mode table {
+    background-color: rgba(0, 0, 0, 0.16);  /* Ciemny szary kolor tła tabeli */
+    color: lightgray;  /* Jasny szary kolor tekstu tabeli */
+}
+
+.night-mode th {
+    background-color: var(--header-bg-color);
+}
+
+.night-mode td {
+    border-top: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.night-mode tr:last-child td {
+    border-bottom: none;
+}
+
+/* Zaokrąglenie rogów */
+th:first-child {
+    border-top-left-radius: 10px; /* Zaokrąglenie lewego górnego rogu */
+}
+
+th:last-child {
+    border-top-right-radius: 10px; /* Zaokrąglenie prawego górnego rogu */
+}

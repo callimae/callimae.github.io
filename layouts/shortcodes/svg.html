@@ -1,0 +1,6 @@
+{{ $path := .Get "src" }}
+{{ with resources.Get $path }}
+    {{ .Content | safeHTML }}
+{{ else }}
+    <!-- Error: SVG file not found -->
+{{ end }}

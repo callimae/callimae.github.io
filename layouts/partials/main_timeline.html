@@ -1,0 +1,150 @@
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Jost:wght@200;300;400&display=swap');
+
+  @import url("https://fonts.googleapis.com/css2?family=Jost:wght@200;300;400&display=swap");
+
+  .design-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 70vh;
+    padding: 10px 0;
+    font-family: Jost;
+  }
+
+  .design {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .timeline {
+    width: 80%;
+    height: auto;
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .timeline-content {
+    padding: 20px;
+    -webkit-box-shadow: 5px 5px 10px #1a1a1a, -5px -5px 10px #242424;
+    box-shadow: 5px 5px 10px #1a1a1a, -5px -5px 10px #242424;
+    border-radius: 5px;
+    color: white;
+    padding: 1.75rem;
+    transition: 0.4s ease;
+    overflow-wrap: break-word !important;
+    margin: 1rem;
+    margin-bottom: 20px;
+    border-radius: 6px;
+    position: relative;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+  }
+
+  .timeline-content:hover::before {
+    content: "";
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    bottom: -5px;
+    left: -5px;
+    background-image: linear-gradient(45deg, #f27121, #e94057, #8a2387);
+    border-radius: 11px;
+    /* Dodane 5px (rozmiar borderu) do obecnego border-radius */
+    z-index: -1;
+  }
+
+  .timeline-component {
+    margin: 0px 20px 20px 20px;
+  }
+
+  @media screen and (min-width: 768px) {
+    .timeline {
+      display: grid;
+      grid-template-columns: 1fr 3px 1fr;
+    }
+
+    .timeline-middle {
+      position: relative;
+      background-image: linear-gradient(45deg, #f27121, #e94057, #8a2387);
+      width: 3px;
+      height: 100%;
+    }
+
+    .main-middle {
+      opacity: 0;
+    }
+
+    .timeline-circle {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      width: 15px;
+      height: 15px;
+      border-radius: 50%;
+      background-image: linear-gradient(45deg, #f27121, #e94057, #8a2387);
+      -webkit-transform: translateX(-50%);
+      transform: translateX(-50%);
+    }
+  }
+
+  .courses:hover::before {
+    background-image: linear-gradient(45deg, #f27121, #e94057, #8a2387);
+  }
+
+  .algorithms:hover::before {
+    background-image: linear-gradient(45deg, #34e89e, #0f3443);
+  }
+
+  .tutorials:hover::before {
+    background-image: linear-gradient(45deg, #f12711, #f5af19);
+  }
+</style>
+<!--This is the main container that contains the whole timeline.-->
+
+
+<section class="design-section">
+  <div class="timeline">
+
+    <!--Well, The reason for this div is to fill space.-->
+    <div class="timeline-empty"></div>
+    <div class="timeline-middle">
+      <div class="timeline-circle"></div>
+    </div>
+    <div class="timeline-component timeline-content courses">
+      <h3>Data Science</h3>
+      <p>Understand statistics and machine learning. </p>
+    </div>
+    <div class="timeline-component timeline-content algorithms">
+      <h3>R programming</h3>
+      <p>Automate work, create beautifull reports or write a thesis. Base, intemediate and advanced material </p>
+    </div>
+    <div class="timeline-middle">
+      <div class="timeline-circle"></div>
+    </div>
+    <div class="timeline-empty"></div>
+
+        <!--Well, The reason for this div is to fill space.-->
+        <div class="timeline-empty"></div>
+        <div class="timeline-middle">
+          <div class="timeline-circle"></div>
+        </div>
+        <div class="timeline-component timeline-content courses">
+          <h3>Bioinformatics</h3>
+          <p>Learn how to analyze genes, expressions and more</p>
+        </div>
+        <div class="timeline-component timeline-content algorithms">
+          <h3>Math</h3>
+          <p>Math backed by empirical examples - make your intuition behind it</p>
+        </div>
+        <div class="timeline-middle">
+          <div class="timeline-circle"></div>
+        </div>
+        <div class="timeline-empty"></div>
+  </div>
+  </div>
+</section>

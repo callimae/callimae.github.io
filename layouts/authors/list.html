@@ -1,0 +1,43 @@
+{{ define "main" }}
+<html lang="eng">
+
+    <head>
+        <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Twoja strona</title>
+    <style>
+        :root {
+            --dynamic-gradient-border: linear-gradient(to right, rgb(255, 255, 255), rgb(220, 210, 255),rgb(255, 255, 255));
+            --dynamic-gradient-border-width: 10px;
+        }
+        </style>
+</head>
+<body>
+
+    <div class="box gradient-border">
+        <h1>{{ .Title }}</h1>
+    </div>
+    <div class="max-w-screen-xl mx-auto px-4 text-center md:px-8">
+        <div class="mt-12">
+            <ul class="grid gap-8 sm:grid-cols-2 md:grid-cols-3 box">
+                {{ range .Site.RegularPages.ByTitle }}
+                {{ if eq .Section "authors" }}
+                <li class="justify-between border-4 border-white rounded-lg min-h-96 w-full p-4">
+                    <div class="w-24 h-24 mx-auto">
+                        <img src="{{ with .Params.avatar }}{{ . }}{{ else }}{{ "default-avatar.png" | absURL }}{{ end }}" class="w-full h-full rounded-full" alt="" />
+                    </div>
+                    <div class="mt-2 ">
+                        <h3 class="text-white-700 font-semibold">{{ .Title }}</h3>
+                        <h4 class="text-indigo-600">{{ with .Params.whoami }}{{ . }}{{ end }}</h4>
+                        <p class="text-white-600 mt-2">{{ with .Params.desc }}{{ . }}{{ end }}</p>
+                    </div>
+                </li>
+                {{ end }}
+                {{ end }}
+            </ul>
+        </div>
+    </div>
+</body>
+
+</html>
+{{ end }}

@@ -1,0 +1,156 @@
+/* Twoje własne style CSS */
+@import url('/css/fonts.css');
+@import url('/css/box.css');
+@import url('/css/header.css');
+@import url('/css/buttons.css');
+@import url('/css/single_table.css');
+@import url('/css/code.css');
+@import url('/css/cards.css');
+@import url('/css/search.css');
+/* Ogólne style dla całej strony */
+
+:root {
+    --bg-color-day: #fff; /* Biały */
+    --text-color-day: #000000e0; /* Czarny */
+    --bg-color-night: #0b0d1d; /* Ciemny szary */
+    --text-color-night: #ffffffff; /* Jasny szary */
+}
+
+.day-mode {
+    background-color: var(--bg-color-day);
+    color: var(--text-color-day);
+}
+
+.night-mode {
+    background-color: var(--bg-color-night);
+    color: var(--text-color-night);
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 0px;
+    font-family: 'Signika', sans-serif;
+}
+
+/* Home */
+.container-home {
+    max-width: 1900px; /* Maksymalna szerokość kontenera, dostosuj według potrzeb */
+    margin: auto; /* Wyśrodkowanie kontenera */
+}
+
+.title-section{
+    margin-top: 115px;
+    margin-bottom: 10px;
+} 
+
+.text-section {
+     /* Dodanie odstępu między sekcją tekstu a sekcją obrazka */
+     height: 260px;
+     width: 300px;
+     border-radius: 15px;
+     position: relative;
+     padding: 20px 20px;
+     margin-top: 10vh;
+     margin-right: 0px;
+     margin-bottom: 0px;
+}
+
+/* Animation */
+@keyframes spinIn {
+    0% {
+        transform: rotate(0deg) translateY(-100px) scale(0.5);
+        opacity: 0;
+    }
+    100% {
+        transform: rotate(360deg) translateY(0) scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes emergeFromBlur {
+    0% {
+        transform: scale(0.5);
+        opacity: 0;
+        filter: blur(10px);
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+        filter: blur(0);
+    }
+}
+
+.about-section p {
+    animation: emergeFromBlur 0.5s forwards;
+    opacity: 0; /* Początkowe ustawienie przezroczystości */
+    transform-origin: center;
+    padding: 2rem;
+}
+
+.about-section-container {
+    margin-left: -100vw;
+    margin-right: -100vw;
+    padding-left: 100vw;
+    padding-right: 100vw;
+    overflow-x: hidden;
+    min-height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center; /* wyśrodkowanie tekstu horyzontalnie */
+
+}
+
+
+body.day-mode .about-section-container {
+    background-color: rgb(255, 255, 255); /* Lekko jaśniejsze dla trybu dziennej zmiany kolorów */
+    color: var(--text-color-day)
+}
+
+body.night-mode .about-section-container {
+    background-color: rgb(255, 255, 255); /* Lekko ciemniejsze dla trybu nocnej zmiany kolorów */
+    color: var(--text-color-day)
+}
+
+@keyframes float-diagonal {
+    0% { transform: translate(0, 0); }
+    50% { transform: translate(10px, -10px); }
+    100% { transform: translate(0, 0); }
+}
+
+/* Main container width */
+.container {
+    max-width: 1300px; /* Maksymalna szerokość kontenera, dostosuj według potrzeb */
+    margin: auto; /* Wyśrodkowanie kontenera */
+    padding: 0 20px; /* Dodanie wewnętrznego marginesu do kontenera */
+}
+
+/* Stylizacja spisu treści */
+.toc-sidebar {
+    position: fixed;
+    top: 100px;
+    left: 0;
+    height: 25%;
+    width: 250px;
+    overflow-y: auto;
+    padding: 20px;
+    overflow-y: hidden;
+}
+
+.toc-sidebar a {
+    color: #fff; /* Zmień na kolor, jaki chcesz */
+}
+
+
+/* Stylizacja linków w spisie treści */
+.toc-sidebar a {
+    text-decoration: none;
+}
+
+/* Stylizacja aktywnych linków w spisie treści */
+.toc-sidebar a.active {
+    font-weight: bold;
+}

@@ -1,0 +1,51 @@
+{{ define "main" }}
+<html lang="eng">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Twoja strona</title>
+    <style>
+        :root {
+            --dynamic-gradient-border: linear-gradient(to right,  rgb(49, 49, 49), rgb(129, 129, 129),rgba(59, 59, 59, 0.1));
+            --dynamic-gradient-border-width: 10px;
+            --card-background: linear-gradient(145deg, rgb(24, 24, 24), rgb(99, 99, 99), rgb(34, 34, 34));
+        }
+    </style>
+</head>
+<body>
+
+<div class="box gradient-border">
+    <h1>{{ .Title }}</h1>
+</div>
+<div class="flex justify-center items-center">
+    
+    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 48px; justify-content: center; align-items: center;">
+        <!-- Card: Authors -->
+        <a href="/authors">
+            <div class="card">
+                <img src="/images/authors-removebg-preview.png" alt="Opis obrazu">
+                <h5 class="card-title">Authors</h5>
+                <p class="card-description">Meet the team behind the content.</p>
+            </div>
+        </a>
+        
+    
+        <!-- Card: Contact Us -->
+        <div class="card">
+            <img src="/images/contact2-removebg-preview.png" alt="Opis obrazu">
+            <h5 class="card-title">Contact Us</h5>
+            <p class="card-description">Get in touch with us for inquiries.</p>
+        </div>
+    
+        <!-- Card: Donate -->
+        <div class="card">
+            <img src="/images/donate2-removebg-preview.png" alt="Opis obrazu">
+            <h5 class="card-title">Donate</h5>
+            <p class="card-description">Support us to keep the site ad-free.</p>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
+{{ end }}

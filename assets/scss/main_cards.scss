@@ -1,0 +1,221 @@
+
+.content {
+    max-width: 800px;
+    width: 100%;
+    padding: 0 4%;
+    padding-top: 0px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media screen and (max-width: 767px) {
+    .content {
+       padding-top: 30px;
+       flex-direction: column;
+    }
+}
+
+.card {
+    width: 20%;
+    max-width: 250px;
+    min-width: 250px;
+    height: 75px;
+    background-color: #2929292c;
+    margin: 40px 40px;
+    border-radius: 10px;
+    border: 2px solid rgba(6, 74, 77, 0.178);
+    font-size: 20px;
+    transition: all 0.3s ease;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    cursor: pointer;
+   
+}
+
+.text {
+    /* ... */
+    position: absolute; // Dodane
+}
+
+.icon {
+    position: absolute;
+    top: -20px;
+    left: -20px;  // Zmiana z 'right' na 'left'
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    transition: all 0.8s ease;
+    background-color: black;
+    z-index: 1;  // Upewniamy się, że ikona zawsze jest na wierzchu
+}
+
+.material-icons.md-18 { font-size: 18px; }
+.material-icons.md-24 { font-size: 24px; }
+.material-icons.md-36 { font-size: 36px; }
+.material-icons.md-48 { font-size: 48px; }
+
+.card .title {
+    width: 100%;
+    margin: 0;
+    text-align: center;
+    margin-top: 0px;
+    color: white;
+    font-weight: 600;
+    font-size: larger;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    transition: margin-top 0.3s ease; /* Dodane */
+}
+
+.card .text {
+    width: 80%;
+    margin: 0 0;
+    font-size: 13px;
+    text-align: center;
+    margin-top: 0px;
+    color: white;
+    font-weight: 200;
+    letter-spacing: 2px;
+    opacity: 0;
+    max-height: 0;
+    transition: all 0.3s ease;
+}
+
+
+// .card:hover {
+//     transform: scale(1.06);
+//     z-index: 100;
+// }
+
+.card:hover .text {
+    opacity: 1;
+    max-height: 500px;
+}
+
+.card:hover .icon {
+    background-position: -120px;
+}
+
+.card:hover .icon i {
+    -webkit-background-clip: initial;
+    -webkit-text-fill-color: white;
+}
+
+.card:hover .title {
+    margin-top: -120px; // Dodane
+    /* ... */
+}
+
+
+// Nowoczesne kolory gradientów
+$coursesColors: (start: rgb(67, 70, 255), mid: rgb(102, 60, 255), end: rgb(60, 138, 255));
+$newsColors: (start: rgb(252, 176, 69), mid: rgb(253, 29, 29), end: rgb(253, 255, 121));
+$tutorialsColors: (start: rgb(0, 255, 191), mid: rgb(101, 250, 255), end: rgb(0, 255, 149));
+$algorithmsColors: (start: rgb(93, 0, 180), mid: rgb(180, 0, 171), end: rgb(93, 0, 180));
+$aboutColors: (start: rgb(49, 49, 49), mid:rgb(129, 129, 129), end: rgba(59, 59, 59, 0.1));
+
+@mixin icon-hover-style($colors) {
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background: linear-gradient(135deg, map-get($colors, start), map-get($colors, mid), map-get($colors, end));
+    opacity: 1;
+    transition: all 0.3s ease;
+}
+
+@mixin test-style($colors) {
+    background: linear-gradient(135deg, map-get($colors, start), map-get($colors, mid), map-get($colors, end));
+}
+
+@mixin card-hover-gradient($selector, $colors) {
+    #{$selector}.gradient-border:after {
+        background: linear-gradient(135deg, map-get($colors, start), map-get($colors, mid), map-get($colors, end));
+        content: '';
+        position: absolute;
+        top: calc(-1 * var(--borderWidth));
+        left: calc(-1 * var(--borderWidth));
+        height: calc(100% + var(--borderWidth) * 2);
+        width: calc(100% + var(--borderWidth) * 2);
+        border-radius: calc(2 * var(--borderWidth));
+        z-index: -1;
+        animation: animatedgradient 6s ease alternate infinite;
+        background-size: 300% 300%;
+    }
+}
+
+@include card-hover-gradient('.courses-card', $coursesColors);
+@include card-hover-gradient('.news-card', $newsColors);
+@include card-hover-gradient('.tutorials-card', $tutorialsColors);
+@include card-hover-gradient('.algorithms-card', $algorithmsColors);
+@include card-hover-gradient('.about-card', $aboutColors);
+
+
+
+.courses-card .icon {
+    background: black;
+}
+.courses-card:hover .icon {
+    @include icon-hover-style($coursesColors);
+}
+
+.news-card .icon {
+    background: black;
+}
+.news-card:hover .icon {
+    @include icon-hover-style($newsColors);
+}
+
+.tutorials-card .icon {
+    background: black;
+}
+.tutorials-card:hover .icon {
+    @include icon-hover-style($tutorialsColors);
+}
+
+.algorithms-card .icon {
+    background: black;
+}
+.algorithms-card:hover .icon {
+    @include icon-hover-style($algorithmsColors);
+}
+
+.about-card .icon {
+    background: black;
+}
+.about-card:hover .icon {
+    @include icon-hover-style($aboutColors);
+}
+
+.gradient-border {
+    --borderWidth: 5px;
+    position: relative;
+    border-radius: var(--borderWidth);
+}
+
+
+.gradient-border:hover {
+    --borderWidth: 10px;
+    position: relative;
+    border-radius: var(--borderWidth);
+}
+
+@keyframes animatedgradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
