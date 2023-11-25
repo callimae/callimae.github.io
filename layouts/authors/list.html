@@ -7,8 +7,9 @@
     <title>Twoja strona</title>
     <style>
         :root {
-            --dynamic-gradient-border: linear-gradient(to right, rgb(255, 255, 255), rgb(220, 210, 255),rgb(255, 255, 255));
+            --dynamic-gradient-border: linear-gradient(to right, rgba(255, 255, 255, 0.096), rgba(220, 210, 255, 0.253),rgba(255, 255, 255, 0.164));
             --dynamic-gradient-border-width: 10px;
+            --card-background: rgb(214, 208, 207);
         }
         </style>
 </head>
@@ -17,12 +18,12 @@
     <div class="box gradient-border">
         <h1>{{ .Title }}</h1>
     </div>
-    <div class="max-w-screen-xl mx-auto px-4 text-center md:px-8">
-        <div class="mt-12">
+    <div class="max-w-screen-xl mx-auto px-4 text-center md:px-2">
+        <div class="mt-4">
             <ul class="grid gap-8 sm:grid-cols-2 md:grid-cols-3 box">
                 {{ range .Site.RegularPages.ByTitle }}
                 {{ if eq .Section "authors" }}
-                <li class="justify-between border-4 border-white rounded-lg min-h-96 w-full p-4">
+                <li class="card card-wide">
                     <div class="w-24 h-24 mx-auto">
                         <img src="{{ with .Params.avatar }}{{ . }}{{ else }}{{ "default-avatar.png" | absURL }}{{ end }}" class="w-full h-full rounded-full" alt="" />
                     </div>
