@@ -1,0 +1,237 @@
+.content {
+  max-width: 800px;
+  width: 100%;
+  padding: 0 4%;
+  padding-top: 0px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
+@media screen and (max-width: 767px) {
+  .content {
+    padding-top: 30px;
+    flex-direction: column; } }
+
+.card {
+  width: 20%;
+  max-width: 250px;
+  min-width: 250px;
+  height: 75px;
+  background-color: #2929292c;
+  margin: 40px 40px;
+  border-radius: 10px;
+  border: 2px solid rgba(6, 74, 77, 0.178);
+  font-size: 20px;
+  transition: all 0.3s ease;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  cursor: pointer; }
+
+.text {
+  /* ... */
+  position: absolute; }
+
+.icon {
+  position: absolute;
+  top: -20px;
+  left: -20px;
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  transition: all 0.8s ease;
+  background-color: black;
+  z-index: 1; }
+
+.material-icons.md-18 {
+  font-size: 18px; }
+
+.material-icons.md-24 {
+  font-size: 24px; }
+
+.material-icons.md-36 {
+  font-size: 36px; }
+
+.material-icons.md-48 {
+  font-size: 48px; }
+
+.card .title {
+  width: 100%;
+  margin: 0;
+  text-align: center;
+  margin-top: 0px;
+  color: white;
+  font-weight: 600;
+  font-size: larger;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  transition: margin-top 0.3s ease;
+  /* Dodane */ }
+
+.card .text {
+  width: 80%;
+  margin: 0 0;
+  font-size: 13px;
+  text-align: center;
+  margin-top: 0px;
+  color: white;
+  font-weight: 200;
+  letter-spacing: 2px;
+  opacity: 0;
+  max-height: 0;
+  transition: all 0.3s ease; }
+
+.card:hover .text {
+  opacity: 1;
+  max-height: 500px; }
+
+.card:hover .icon {
+  background-position: -120px; }
+
+.card:hover .icon i {
+  -webkit-background-clip: initial;
+  -webkit-text-fill-color: white; }
+
+.card:hover .title {
+  margin-top: -120px;
+  /* ... */ }
+
+.courses-card.gradient-border:after {
+  background: linear-gradient(135deg, #4346ff, #663cff, #3c8aff);
+  content: '';
+  position: absolute;
+  top: calc(-1 * var(--borderWidth));
+  left: calc(-1 * var(--borderWidth));
+  height: calc(100% + var(--borderWidth) * 2);
+  width: calc(100% + var(--borderWidth) * 2);
+  border-radius: calc(2 * var(--borderWidth));
+  z-index: -1;
+  animation: animatedgradient 6s ease alternate infinite;
+  background-size: 300% 300%; }
+
+.news-card.gradient-border:after {
+  background: linear-gradient(135deg, #fcb045, #fd1d1d, #fdff79);
+  content: '';
+  position: absolute;
+  top: calc(-1 * var(--borderWidth));
+  left: calc(-1 * var(--borderWidth));
+  height: calc(100% + var(--borderWidth) * 2);
+  width: calc(100% + var(--borderWidth) * 2);
+  border-radius: calc(2 * var(--borderWidth));
+  z-index: -1;
+  animation: animatedgradient 6s ease alternate infinite;
+  background-size: 300% 300%; }
+
+.tutorials-card.gradient-border:after {
+  background: linear-gradient(135deg, #00ffbf, #65faff, #00ff95);
+  content: '';
+  position: absolute;
+  top: calc(-1 * var(--borderWidth));
+  left: calc(-1 * var(--borderWidth));
+  height: calc(100% + var(--borderWidth) * 2);
+  width: calc(100% + var(--borderWidth) * 2);
+  border-radius: calc(2 * var(--borderWidth));
+  z-index: -1;
+  animation: animatedgradient 6s ease alternate infinite;
+  background-size: 300% 300%; }
+
+.algorithms-card.gradient-border:after {
+  background: linear-gradient(135deg, #5d00b4, #b400ab, #5d00b4);
+  content: '';
+  position: absolute;
+  top: calc(-1 * var(--borderWidth));
+  left: calc(-1 * var(--borderWidth));
+  height: calc(100% + var(--borderWidth) * 2);
+  width: calc(100% + var(--borderWidth) * 2);
+  border-radius: calc(2 * var(--borderWidth));
+  z-index: -1;
+  animation: animatedgradient 6s ease alternate infinite;
+  background-size: 300% 300%; }
+
+.about-card.gradient-border:after {
+  background: linear-gradient(135deg, #313131, #818181, rgba(59, 59, 59, 0.1));
+  content: '';
+  position: absolute;
+  top: calc(-1 * var(--borderWidth));
+  left: calc(-1 * var(--borderWidth));
+  height: calc(100% + var(--borderWidth) * 2);
+  width: calc(100% + var(--borderWidth) * 2);
+  border-radius: calc(2 * var(--borderWidth));
+  z-index: -1;
+  animation: animatedgradient 6s ease alternate infinite;
+  background-size: 300% 300%; }
+
+.courses-card .icon {
+  background: black; }
+
+.courses-card:hover .icon {
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background: linear-gradient(135deg, #4346ff, #663cff, #3c8aff);
+  opacity: 1;
+  transition: all 0.3s ease; }
+
+.news-card .icon {
+  background: black; }
+
+.news-card:hover .icon {
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background: linear-gradient(135deg, #fcb045, #fd1d1d, #fdff79);
+  opacity: 1;
+  transition: all 0.3s ease; }
+
+.tutorials-card .icon {
+  background: black; }
+
+.tutorials-card:hover .icon {
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background: linear-gradient(135deg, #00ffbf, #65faff, #00ff95);
+  opacity: 1;
+  transition: all 0.3s ease; }
+
+.algorithms-card .icon {
+  background: black; }
+
+.algorithms-card:hover .icon {
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background: linear-gradient(135deg, #5d00b4, #b400ab, #5d00b4);
+  opacity: 1;
+  transition: all 0.3s ease; }
+
+.about-card .icon {
+  background: black; }
+
+.about-card:hover .icon {
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background: linear-gradient(135deg, #313131, #818181, rgba(59, 59, 59, 0.1));
+  opacity: 1;
+  transition: all 0.3s ease; }
+
+.gradient-border {
+  --borderWidth: 5px;
+  position: relative;
+  border-radius: var(--borderWidth); }
+
+.gradient-border:hover {
+  --borderWidth: 10px;
+  position: relative;
+  border-radius: var(--borderWidth); }
+
+@keyframes animatedgradient {
+  0% {
+    background-position: 0% 50%; }
+  50% {
+    background-position: 100% 50%; }
+  100% {
+    background-position: 0% 50%; } }

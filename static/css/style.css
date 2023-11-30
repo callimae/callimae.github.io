@@ -29,7 +29,7 @@
 body {
     margin: 0;
     padding: 0;
-    max-width: 80vw;
+    max-width: 75vw;
     margin: 0 auto;
     padding: 0 0px;
     font-family: 'Signika', sans-serif;
@@ -99,23 +99,49 @@ body.night-mode .about-section-container {
 }
 
 /* Stylizacja spisu treści dla trybu dnia */
-body.day-mode .toc-sidebar {
+.day-mode .toc-sidebar {
     background-color: var(--bg-color-day); /* Tło dla trybu dnia */
     color: var(--text-color-day); /* Kolor tekstu dla trybu dnia */
 }
 
-body.day-mode .toc-sidebar a {
+.day-mode .toc-sidebar a {
     color: var(--text-color-day); /* Kolor linków dla trybu dnia */
 }
 
 /* Stylizacja spisu treści dla trybu nocy */
-body.night-mode .toc-sidebar {
+.night-mode .toc-sidebar {
     background-color: var(--bg-color-night); /* Tło dla trybu nocy */
     color: var(--text-color-night); /* Kolor tekstu dla trybu nocy */
 }
 
-body.night-mode .toc-sidebar a {
+.night-mode .toc-sidebar a {
     color: var(--text-color-night); /* Kolor linków dla trybu nocy */
+}
+
+
+@keyframes float-diagonal {
+    0% { transform: translate(0, 0); }
+    50% { transform: translate(10px, -10px); }
+    100% { transform: translate(0, 0); }
+}
+
+/* Main container width */
+.container {
+    max-width: 1300px; /* Maksymalna szerokość kontenera, dostosuj według potrzeb */
+    margin: auto; /* Wyśrodkowanie kontenera */
+    padding: 0 20px; /* Dodanie wewnętrznego marginesu do kontenera */
+}
+
+/* Stylizacja spisu treści */
+.toc-sidebar {
+    position: fixed;
+    top: 100px;
+    left: 0;
+    height: 25%;
+    width: 15vw;
+    overflow-y: auto;
+    padding: 20px;
+    overflow-y: hidden;
 }
 
 /* Dla ekranów szerszych niż 1200px */
@@ -145,32 +171,6 @@ body.night-mode .toc-sidebar a {
     }
   }
   
-
-@keyframes float-diagonal {
-    0% { transform: translate(0, 0); }
-    50% { transform: translate(10px, -10px); }
-    100% { transform: translate(0, 0); }
-}
-
-/* Main container width */
-.container {
-    max-width: 1300px; /* Maksymalna szerokość kontenera, dostosuj według potrzeb */
-    margin: auto; /* Wyśrodkowanie kontenera */
-    padding: 0 20px; /* Dodanie wewnętrznego marginesu do kontenera */
-}
-
-/* Stylizacja spisu treści */
-.toc-sidebar {
-    position: fixed;
-    top: 100px;
-    left: 0;
-    height: 25%;
-    width: 15vw;
-    overflow-y: auto;
-    padding: 20px;
-    overflow-y: hidden;
-}
-
 .toc-sidebar a {
     color: #fff; /* Zmień na kolor, jaki chcesz */
 }

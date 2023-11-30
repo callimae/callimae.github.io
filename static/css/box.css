@@ -1,11 +1,12 @@
 /* pozostałe style dla .box, które są wspólne dla obu trybów */
 .box {
     border-radius: 8px;
-    margin: 50px auto;
-    padding: 40px;
+    margin: auto;
+    padding: 30px;
     text-align: center;
-    width: 100%; 
+    max-width: 75vw; 
     margin-top: 125px;
+    margin-bottom: 75px;
 }
 
 .day-mode .box {    

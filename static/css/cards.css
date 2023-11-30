@@ -10,11 +10,11 @@
     padding: 0px;
     text-align: center;
     margin: 25px 25px;
-    z-index: 9999;
+    z-index: 1;
 }
 
 .card-wide {
-    width: 330px; /* Na przykład */
+    width: 300px; /* Na przykład */
 }
 
 .card-tall {
