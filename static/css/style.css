@@ -98,6 +98,25 @@ body.night-mode .about-section-container {
     color: var(--text-color-day)
 }
 
+/* Stylizacja spisu treści dla trybu dnia */
+body.day-mode .toc-sidebar {
+     color: var(--text-color-day); /* Kolor tekstu dla trybu dnia */
+}
+
+body.day-mode .toc-sidebar a {
+    color: var(--text-color-day); /* Kolor linków dla trybu dnia */
+}
+
+/* Stylizacja spisu treści dla trybu nocy */
+body.night-mode .toc-sidebar {
+    color: var(--text-color-night); /* Kolor tekstu dla trybu nocy */
+}
+
+body.night-mode .toc-sidebar a {
+    color: var(--text-color-night); /* Kolor linków dla trybu nocy */
+}
+
+
 @keyframes float-diagonal {
     0% { transform: translate(0, 0); }
     50% { transform: translate(10px, -10px); }
@@ -117,7 +136,7 @@ body.night-mode .about-section-container {
     top: 100px;
     left: 0;
     height: 25%;
-    width: 250px;
+    width: 15vw;
     overflow-y: auto;
     padding: 20px;
     overflow-y: hidden;
@@ -126,7 +145,6 @@ body.night-mode .about-section-container {
 .toc-sidebar a {
     color: #fff; /* Zmień na kolor, jaki chcesz */
 }
-
 
 /* Stylizacja linków w spisie treści */
 .toc-sidebar a {
