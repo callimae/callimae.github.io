@@ -29,7 +29,7 @@
 body {
     margin: 0;
     padding: 0;
-    max-width: 1400px;
+    max-width: 90vw;
     margin: 0 auto;
     padding: 0 0px;
     font-family: 'Signika', sans-serif;
@@ -76,14 +76,10 @@ body {
     animation: emergeFromBlur 0.5s forwards;
     opacity: 0; /* Początkowe ustawienie przezroczystości */
     transform-origin: center;
-    padding: 2rem;
+    padding: 18rem;
 }
 
 .about-section-container {
-    margin-left: -100vw;
-    margin-right: -100vw;
-    padding-left: 100vw;
-    padding-right: 100vw;
     overflow-x: hidden;
     min-height: 50vh;
     display: flex;
