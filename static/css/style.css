@@ -100,7 +100,8 @@ body.night-mode .about-section-container {
 
 /* Stylizacja spisu treści dla trybu dnia */
 body.day-mode .toc-sidebar {
-     color: var(--text-color-day); /* Kolor tekstu dla trybu dnia */
+    background-color: var(--bg-color-day); /* Tło dla trybu dnia */
+    color: var(--text-color-day); /* Kolor tekstu dla trybu dnia */
 }
 
 body.day-mode .toc-sidebar a {
@@ -109,6 +110,7 @@ body.day-mode .toc-sidebar a {
 
 /* Stylizacja spisu treści dla trybu nocy */
 body.night-mode .toc-sidebar {
+    background-color: var(--bg-color-night); /* Tło dla trybu nocy */
     color: var(--text-color-night); /* Kolor tekstu dla trybu nocy */
 }
 
@@ -116,6 +118,33 @@ body.night-mode .toc-sidebar a {
     color: var(--text-color-night); /* Kolor linków dla trybu nocy */
 }
 
+/* Dla ekranów szerszych niż 1200px */
+@media (min-width: 1200px) {
+    .toc-sidebar {
+      width: 10vw; /* Szerokość dla dużych ekranów */
+      top: 100px;
+      left: 0;
+    }
+  }
+  
+  /* Dla ekranów średnich, od 768px do 1199px */
+  @media (min-width: 768px) and (max-width: 1199px) {
+    .toc-sidebar {
+      width: 15vw; /* Większa szerokość dla średnich ekranów */
+      top: 80px;
+      left: 0;
+    }
+  }
+  
+  /* Dla ekranów mniejszych niż 767px */
+  @media (max-width: 767px) {
+    .toc-sidebar {
+      width: 20vw; /* Jeszcze większa szerokość dla małych ekranów */
+      top: 60px;
+      position: relative; /* Możesz zmienić na 'absolute', jeśli to lepiej pasuje */
+    }
+  }
+  
 
 @keyframes float-diagonal {
     0% { transform: translate(0, 0); }
