@@ -133,22 +133,3 @@
     border-radius: 5px;
 }
 
-/* used on single page */
-.single-content-container {
-    line-height: 1.75;
-    padding: 20px;
-    border-radius: 10px;
-    /* Opcjonalnie, jeśli chcesz zaokrąglone rogi. */
-    margin: 20px 0;
-    /* Odstępy, żeby kontener nie przylegał bezpośrednio do krawędzi strony. */
-}
-
-.day-mode .single-content-container {
-    background-color: #e9e9e9;
-    /* Jaśniejszy kolor szary. Możesz dostosować ten kolor według własnych potrzeb. */
-}
-
-.night-mode .single-content-container {
-    background-color: #1b202e;
-    /* Jaśniejszy kolor szary. Możesz dostosować ten kolor według własnych potrzeb. */
-}
