@@ -1,5 +1,6 @@
 {{ define "main" }}
 <html lang="eng">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -12,6 +13,7 @@
         }
     </style>
 </head>
+
 <body>
     <div class="box gradient-border">
         <h1>{{ .Title }}</h1>
@@ -19,35 +21,42 @@
     {{ $allPages := where .Site.RegularPages "Section" .Section }}
     {{ $categories := slice }}
     {{ range $allPages }}
-        {{ $categories = $categories | union .Params.categories }}
+    {{ $categories = $categories | union .Params.categories }}
     {{ end }}
     {{ range $categories }}
-        {{ $category := . }}
-        {{ $pages := where $allPages "Params.categories" "intersect" (slice $category) }}
-        <div class="content-box" id="{{ $category | urlize }}">
-            <header>
-                <h2 id="{{ $category | urlize }}">{{ $category }}</h2>
-                <!-- Przycisk rozszerzenia / zwinięcia -->
-                <button onclick="toggleContent(this)">Rozwiń/Zwiń</button>
-            </header>
-            <div id="expandableContent" class="flex-container">
-                {{ range $pages }}
-                    <a href="{{ .RelPermalink }}" class="card">
-                        {{ partial "card.html" . }}
-                    </a>
-                {{ end }}
-            </div>
+    {{ $category := . }}
+    {{ $pages := where $allPages "Params.categories" "intersect" (slice $category) }}
+    <div class="content-box" id="{{ $category | urlize }}">
+        <header>
+            <h2 id="{{ $category | urlize }}">{{ $category }}</h2>
+            <!-- Przycisk rozszerzenia / zwinięcia -->
+
+        </header>
+        <div id="expandableContent" class="flex-container">
+            {{ range $pages }}
+            <a href="{{ .RelPermalink }}" class="card card-wide">
+                {{ partial "card.html" . }}
+            </a>
+            {{ end }}
         </div>
+        <button class="expand-button float-right text-3xl animate-pulse" onclick="toggleCards(this)">
+            <span class="expand-icon active">&#9660;</span> <!-- Strzałka w dół -->
+            <span class="collapse-icon hidden">&#9650;</span> <!-- Strzałka w górę -->
+        </button>
+
+    </div>
     {{ end }}
-    
+
+
     <script>
-    // Definicja funkcji toggleContent
-    function toggleContent(button) {
-      // ... kod funkcji
-    }
+        // Definicja funkcji toggleContent
+        function toggleContent(button) {
+            // ... kod funkcji
+        }
     </script>
 
 </body>
+
 </html>
 
 {{ end }}

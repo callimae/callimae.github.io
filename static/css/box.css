@@ -4,12 +4,12 @@
     margin: auto;
     padding: 30px;
     text-align: center;
-    max-width: 75vw; 
+    max-width: 75vw;
     margin-top: 125px;
     margin-bottom: 75px;
 }
 
-.day-mode .box {    
+.day-mode .box {
     color: var(--text-color-day);
     /* pozostałe style */
 }
@@ -25,7 +25,7 @@
     border-radius: var(--borderWidth);
 }
 
-.day-mode .gradient-border {    
+.day-mode .gradient-border {
     background: var(--bg-color-day);
     /* pozostałe style */
 }
@@ -34,7 +34,7 @@
     background: var(--bg-color-night);
     /* pozostałe style */
 }
-  
+
 .gradient-border:after {
     content: '';
     position: absolute;
@@ -47,19 +47,21 @@
     z-index: -1;
     animation: animatedgradient 6s ease alternate infinite;
     background-size: 300% 300%;
-  }
-  
-  @keyframes animatedgradient {
-      0% {
-          background-position: 0% 50%;
-      }
-      50% {
-          background-position: 100% 50%;
-      }
-      100% {
-          background-position: 0% 50%;
-      }
-  }
+}
+
+@keyframes animatedgradient {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
 
 .title-box {
     background-color: #e4e4e4;
@@ -69,14 +71,15 @@
     padding: 16px;
 }
 
-.content-box{
+.content-box {
     opacity: 1;
     border-radius: 8px;
     padding: 25px;
-    margin-bottom: 25px;   
+    margin-bottom: 25px;
 }
+
 .night-mode .content-box {
-    border-color: #3385ff;   
+    border-color: #3385ff;
 }
 
 .day-mode .content-box {
@@ -86,21 +89,26 @@
 .content-box .flex-container {
     display: flex;
     flex-wrap: wrap;
-    gap: 5px; /* Dodaje odstęp pomiędzy kartami */
-    max-height: 330px;  /* Zmodyfikuj wedle potrzeb */
-}   
+    gap: 5px;
+    /* Dodaje odstęp pomiędzy kartami */
+    max-height: 330px;
+    /* Zmodyfikuj wedle potrzeb */
+}
 
 .flex-container {
     justify-content: center;
     display: flex;
-    flex-wrap: nowrap;  /* Pozostaw jak jest */
-    overflow-y: auto;  /* Dodałem */
-   
+    flex-wrap: nowrap;
+    /* Pozostaw jak jest */
+    overflow-y: auto;
+    /* Dodałem */
+
 }
 
 .flex-container.show-more {
-    flex-wrap: wrap;  /* Dodałem */
-    max-height: none;  
+    flex-wrap: wrap;
+    /* Dodałem */
+    max-height: none;
 }
 
 /* Single page */
@@ -129,14 +137,18 @@
 .single-content-container {
     line-height: 1.75;
     padding: 20px;
-    border-radius: 10px; /* Opcjonalnie, jeśli chcesz zaokrąglone rogi. */
-    margin: 20px 0; /* Odstępy, żeby kontener nie przylegał bezpośrednio do krawędzi strony. */
+    border-radius: 10px;
+    /* Opcjonalnie, jeśli chcesz zaokrąglone rogi. */
+    margin: 20px 0;
+    /* Odstępy, żeby kontener nie przylegał bezpośrednio do krawędzi strony. */
 }
 
-.day-mode .single-content-container{
-    background-color: #e9e9e9; /* Jaśniejszy kolor szary. Możesz dostosować ten kolor według własnych potrzeb. */
+.day-mode .single-content-container {
+    background-color: #e9e9e9;
+    /* Jaśniejszy kolor szary. Możesz dostosować ten kolor według własnych potrzeb. */
 }
 
-.night-mode .single-content-container{
-    background-color: #1b202e; /* Jaśniejszy kolor szary. Możesz dostosować ten kolor według własnych potrzeb. */
+.night-mode .single-content-container {
+    background-color: #1b202e;
+    /* Jaśniejszy kolor szary. Możesz dostosować ten kolor według własnych potrzeb. */
 }
