@@ -3,31 +3,27 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>//callimae.github.io/categories/</loc>
-    <lastmod>2023-12-30T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>//callimae.github.io/courses/</loc>
-    <lastmod>2023-12-30T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>//callimae.github.io/post/2023-12-30-new/</loc>
-    <lastmod>2023-12-30T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>//callimae.github.io/post/</loc>
-    <lastmod>2023-12-30T00:00:00+00:00</lastmod>
+    <lastmod>2023-10-05T00:00:00+00:00</lastmod>
   </url><url>
     <loc>//callimae.github.io/</loc>
-    <lastmod>2023-12-30T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>//callimae.github.io/courses/2023-12-30-test/</loc>
-    <lastmod>2023-12-30T00:00:00+00:00</lastmod>
+    <lastmod>2023-10-05T00:00:00+00:00</lastmod>
   </url><url>
     <loc>//callimae.github.io/categories/s4-class/</loc>
-    <lastmod>2023-12-30T00:00:00+00:00</lastmod>
+    <lastmod>2023-10-05T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//callimae.github.io/tutorials/s4_class/</loc>
+    <lastmod>2023-10-05T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//callimae.github.io/tutorials/</loc>
+    <lastmod>2023-10-05T00:00:00+00:00</lastmod>
   </url><url>
     <loc>//callimae.github.io/about/</loc>
   </url><url>
     <loc>//callimae.github.io/algorithms/</loc>
   </url><url>
     <loc>//callimae.github.io/authors/</loc>
+  </url><url>
+    <loc>//callimae.github.io/courses/</loc>
   </url><url>
     <loc>//callimae.github.io/categories/expectation-maximization/</loc>
   </url><url>
@@ -54,8 +50,6 @@
     <loc>//callimae.github.io/categories/sorting-algorithms/</loc>
   </url><url>
     <loc>//callimae.github.io/tags/</loc>
-  </url><url>
-    <loc>//callimae.github.io/tutorials/</loc>
   </url><url>
     <loc>//callimae.github.io/algorithms/univariategaussem/</loc>
   </url>

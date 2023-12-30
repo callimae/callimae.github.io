@@ -39,16 +39,14 @@ description = "Explore the world of R and data science with the latest news, cou
 home = ["HTML", "RSS", "JSON"]
 
 [markup]
-[markup.tableOfContents]
-startLevel = 1
-endLevel = 4
-ordered = false
-[markup.highlight]
-style = "nord"
-codeFences = true
-
-[markup]
-  [markup.goldmark]
-    [markup.goldmark.renderer]
-      unsafe = true
+    [markup.tableOfContents]
+    startLevel = 1
+    endLevel = 4
+    ordered = false
+    [markup.highlight]
+    style = "nord"
+    codeFences = true
+    [markup.goldmark]
+        [markup.goldmark.renderer]
+        unsafe = true
 
