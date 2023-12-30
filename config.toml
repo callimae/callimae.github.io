@@ -46,3 +46,8 @@ ordered = false
 [markup.highlight]
 style = "nord"
 codeFences = true
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
