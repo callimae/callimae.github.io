@@ -30,33 +30,33 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-    font-size: 5rem;
+    font-size: 3.75rem;
 }
 
 h2 {
-    font-size: 4rem;
+    font-size: 2.85rem;
 }
 
 h3 {
-    font-size: 3.5rem;
+    font-size: 2.25rem;
 }
 
 h4 {
-    font-size: 3.25rem;
+    font-size: 1.75rem;
 }
 
 h5 {
-    font-size: 3rem;
+    font-size: 1.25rem;
 }
 
 h6 {
-    font-size: 2.75rem;
+    font-size: 1rem;
     font-weight: normal;
 }
 
 /* Style dla paragrafów */
 p {
-    font-size: 2rem;
+    font-size: 0.8rem;
     margin-bottom: 0em;
 }
 
@@ -90,31 +90,26 @@ code, pre {
 */
 
 .single-content-container h1 {
-    font-size: 4rem;
+    font-size: 3rem;
 }
 
 .single-content-container h2 {
-    font-size: 3.5rem;
+    font-size: 2.5rem;
 }
 
 .single-content-container h3 {
-    font-size: 3.25rem;
+    font-size: 2rem;
 }
 
 .single-content-container h4 {
-    font-size: 3.0rem;
+    font-size: 1.7rem;
 }
 
 .single-content-container h5 {
-    font-size: 2.75rem;
+    font-size: 1.4rem;
 }
 
 .single-content-container h6 {
-    font-size: 2.5rem;
-    font-weight: normal; /* A lighter weight for the smallest header for stylistic variety */
-}
-
-.single-content-container p {
-    font-size: 1.5rem;
+    font-size: 1.1rem;
     font-weight: normal; /* A lighter weight for the smallest header for stylistic variety */
 }

@@ -1,0 +1,220 @@
+/* Twoje własne style CSS */
+@import url('/css/fonts.css');
+@import url('/css/single_page.css');
+@import url('/css/box.css');
+@import url('/css/header.css');
+@import url('/css/buttons.css');
+@import url('/css/single_table.css');
+@import url('/css/code.css');
+@import url('/css/cards.css');
+@import url('/css/search.css');
+/* Ogólne style dla całej strony */
+
+:root {
+    --bg-color-day: #fff;
+    /* Biały */
+    --text-color-day: #000000e0;
+    /* Czarny */
+    --bg-color-night: #0b0d1d;
+    /* Ciemny szary */
+    --text-color-night: #ffffffff;
+    /* Jasny szary */
+}
+
+.day-mode {
+    background-color: var(--bg-color-day);
+    color: var(--text-color-day);
+}
+
+.night-mode {
+    background-color: var(--bg-color-night);
+    color: var(--text-color-night);
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    max-width: 75vw;
+    margin: 0 auto;
+    padding: 0 0px;
+    font-family: 'Signika', sans-serif;
+}
+
+/* Home */
+.container-home {
+    max-width: 1900px;
+    /* Maksymalna szerokość kontenera, dostosuj według potrzeb */
+    margin: auto;
+    /* Wyśrodkowanie kontenera */
+}
+
+.title-section {
+    margin-top: 115px;
+    margin-bottom: 10px;
+}
+
+.text-section {
+    /* Dodanie odstępu między sekcją tekstu a sekcją obrazka */
+    height: 260px;
+    width: 300px;
+    border-radius: 15px;
+    position: relative;
+    padding: 20px 20px;
+    margin-top: 10vh;
+    margin-right: 0px;
+    margin-bottom: 0px;
+}
+
+/* Animation */
+@keyframes emergeFromBlur {
+    0% {
+        transform: scale(0.5);
+        opacity: 0;
+        filter: blur(10px);
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+        filter: blur(0);
+    }
+}
+
+.about-section p {
+    animation: emergeFromBlur 0.5s forwards;
+    opacity: 0;
+    /* Początkowe ustawienie przezroczystości */
+    transform-origin: center;
+    padding: 18rem;
+}
+
+.about-section-container {
+    overflow-x: hidden;
+    min-height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    /* wyśrodkowanie tekstu horyzontalnie */
+}
+
+body.day-mode .about-section-container {
+    background-color: rgb(255, 255, 255);
+    /* Lekko jaśniejsze dla trybu dziennej zmiany kolorów */
+    color: var(--text-color-day)
+}
+
+body.night-mode .about-section-container {
+    background-color: rgb(255, 255, 255);
+    /* Lekko ciemniejsze dla trybu nocnej zmiany kolorów */
+    color: var(--text-color-day)
+}
+
+/* Stylizacja spisu treści dla trybu dnia */
+.day-mode .toc-sidebar {
+    background-color: var(--bg-color-day);
+    /* Tło dla trybu dnia */
+    color: var(--text-color-day);
+    /* Kolor tekstu dla trybu dnia */
+}
+
+.day-mode .toc-sidebar a {
+    color: var(--text-color-day);
+    /* Kolor linków dla trybu dnia */
+}
+
+/* Stylizacja spisu treści dla trybu nocy */
+.night-mode .toc-sidebar {
+    background-color: var(--bg-color-night);
+    /* Tło dla trybu nocy */
+    color: var(--text-color-night);
+    /* Kolor tekstu dla trybu nocy */
+}
+
+.night-mode .toc-sidebar a {
+    color: var(--text-color-night);
+    /* Kolor linków dla trybu nocy */
+}
+
+
+@keyframes float-diagonal {
+    0% {
+        transform: translate(0, 0);
+    }
+
+    50% {
+        transform: translate(10px, -10px);
+    }
+
+    100% {
+        transform: translate(0, 0);
+    }
+}
+
+/* Main container width */
+.container {
+    max-width: 1300px;
+    /* Maksymalna szerokość kontenera, dostosuj według potrzeb */
+    margin: auto;
+    /* Wyśrodkowanie kontenera */
+    padding: 0 20px;
+    /* Dodanie wewnętrznego marginesu do kontenera */
+}
+
+/* Stylizacja spisu treści */
+.toc-sidebar {
+    position: fixed;
+    top: 100px;
+    left: 0;
+    height: 25%;
+    width: 15vw;
+    overflow-y: auto;
+    padding: 20px;
+    overflow-y: hidden;
+}
+
+/* Dla ekranów szerszych niż 1200px */
+@media (min-width: 1200px) {
+    .toc-sidebar {
+        width: 10vw;
+        /* Szerokość dla dużych ekranów */
+        top: 100px;
+        left: 0;
+    }
+}
+
+/* Dla ekranów średnich, od 768px do 1199px */
+@media (min-width: 768px) and (max-width: 1199px) {
+    .toc-sidebar {
+        width: 15vw;
+        /* Większa szerokość dla średnich ekranów */
+        top: 80px;
+        left: 0;
+    }
+}
+
+/* Dla ekranów mniejszych niż 767px */
+@media (max-width: 767px) {
+    .toc-sidebar {
+        width: 20vw;
+        /* Jeszcze większa szerokość dla małych ekranów */
+        top: 60px;
+        position: relative;
+        /* Możesz zmienić na 'absolute', jeśli to lepiej pasuje */
+    }
+}
+
+.toc-sidebar a {
+    color: #fff;
+    /* Zmień na kolor, jaki chcesz */
+}
+
+/* Stylizacja linków w spisie treści */
+.toc-sidebar a {
+    text-decoration: none;
+}
+
+/* Stylizacja aktywnych linków w spisie treści */
+.toc-sidebar a.active {
+    font-weight: bold;
+}

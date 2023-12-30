@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  
+  <meta charset="UTF-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>R-stuff</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.18.2/tocbot.css" />
+
+  
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
+  
+  <script type="text/javascript" async
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+
+  <script src="https://unpkg.com/alpinejs" defer></script>
+
+  
+  <link rel="stylesheet" href="/css/style.css" />
+
+  
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+  
+
+  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+<script src="https://d3js.org/d3.v7.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/mixitup@3/dist/mixitup.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lunr/lunr.min.js"></script>
+
+</head>
+
+<body class="night-mode">
+  
+  <header class="bg-white p-4 site-header">
+    <div class="container mx-auto">
+        <div class="flex justify-between items-center">
+            
+            <div class="logo">
+                <a href="/" class="text-xl font-bold text-black small-caps tracking-wider nav-link">R-stuff</a>
+            </div>
+            
+            
+            <div class="flex-space">
+                <nav>
+                    <ul class="flex justify-center text-xl space-x-6">
+                        
+                        
+                        <li class="group relative inline-block">
+                                <a href="/news" class="nav-link">News</a>
+                                <div class="invisible h-1 w-full"></div> 
+                                
+                                
+                                
+                                </li>
+                        
+                        <li class="group relative inline-block">
+                                <a href="/courses" class="nav-link">Courses</a>
+                                <div class="invisible h-1 w-full"></div> 
+                                
+                                
+                                
+                                    
+                                        <div id="dropdownContent" class="absolute left-0 mt-2 w-48 bg-white border border-gray-300 rounded-md shadow-lg transition-opacity duration-200">    
+                                            
+                                        
+                                        
+                                        
+                                        
+                                        
+                                            <div class="category-container relative group">
+                                                <a href="#s4-class" class="category-link block px-4 py-2 text-gray-700 hover:bg-gray-100">S4 Class</a>
+                                                
+                                                
+                                                
+                                                <div class="titles-list absolute left-full top-0 w-48 bg-white border border-gray-300 rounded-md shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+                                                    
+                                                    <a href="/courses/2023-12-30-test/" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">S4</a>
+                                                    
+                                                </div>
+                                            </div>
+                                        
+                                    </div>
+                                    
+                                </li>
+                        
+                        <li class="group relative inline-block">
+                                <a href="/algorithms" class="nav-link">Algorithms</a>
+                                <div class="invisible h-1 w-full"></div> 
+                                
+                                
+                                
+                                    
+                                        <div id="dropdownContent" class="absolute left-0 mt-2 w-48 bg-white border border-gray-300 rounded-md shadow-lg transition-opacity duration-200">    
+                                            
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                            <div class="category-container relative group">
+                                                <a href="#expectation-maximization" class="category-link block px-4 py-2 text-gray-700 hover:bg-gray-100">Expectation-Maximization</a>
+                                                
+                                                
+                                                
+                                                <div class="titles-list absolute left-full top-0 w-48 bg-white border border-gray-300 rounded-md shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+                                                    
+                                                    <a href="/algorithms/multivariategaussem-copy-2/" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Multivariate Gauss EM</a>
+                                                    
+                                                    <a href="/algorithms/multivariategaussem-copy/" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Multivariate Gauss EM</a>
+                                                    
+                                                    <a href="/algorithms/multivariategaussem/" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Multivariate Gauss EM</a>
+                                                    
+                                                    <a href="/algorithms/multivariategaussem-copy-4/" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Multivariate Gauss2 EM</a>
+                                                    
+                                                    <a href="/algorithms/multivariategaussem-copy-3/" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Multivariate Gauss5 EM</a>
+                                                    
+                                                    <a href="/algorithms/multivariategaussem-copy-5/" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Multivariate Gauss6 EM</a>
+                                                    
+                                                    <a href="/algorithms/univariategaussem/" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Univariate Gauss EM</a>
+                                                    
+                                                </div>
+                                            </div>
+                                        
+                                            <div class="category-container relative group">
+                                                <a href="#sorting-algorithms" class="category-link block px-4 py-2 text-gray-700 hover:bg-gray-100">Sorting Algorithms</a>
+                                                
+                                                
+                                                
+                                                <div class="titles-list absolute left-full top-0 w-48 bg-white border border-gray-300 rounded-md shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+                                                    
+                                                    <a href="/algorithms/sorting/" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Minimum value</a>
+                                                    
+                                                </div>
+                                            </div>
+                                        
+                                    </div>
+                                    
+                                </li>
+                        
+                        <li class="group relative inline-block">
+                                <a href="/tutorials" class="nav-link">Tutorials</a>
+                                <div class="invisible h-1 w-full"></div> 
+                                
+                                
+                                
+                                </li>
+                        
+                        <li class="group relative inline-block">
+                                <a href="/about" class="nav-link">About</a>
+                                <div class="invisible h-1 w-full"></div> 
+                                
+                                
+                                
+                                </li>
+                        
+                    </ul>
+                    
+                    
+                </nav>
+            </div>
+            
+            <div class="search-bar flex items-center space-x-4">
+                
+                <div id="search-container" style="position:relative;">
+  <form id="search" action="javascript:void(0);">
+      <label hidden for="search-input">Search site</label>
+      <input type="text" id="search-input" name="query" placeholder="Type here to search" autocomplete="off">
+      <button type="submit" id="search-submit">
+          <i class="fas fa-search"></i>
+      </button>
+  </form>
+  <div id="results" style="display:none; position:absolute; top:100%; left:0; right:0; background-color: #fff; border: 1px solid #ccc; border-radius: 4px; z-index: 1000;"></div>
+</div>
+
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', (event) => {
+  const searchContainer = document.getElementById('search-container');
+  const searchInput = document.getElementById('search-input');
+  const resultsContainer = document.getElementById('results');
+
+  let data;
+
+  fetch('/index.json')
+    .then(response => response.json())
+    .then(jsonData => {
+      data = jsonData;
+      const idx = lunr(function () {
+        this.ref('uri');
+        this.field('title');
+        this.field('content');
+        this.field('description');
+        this.field('categories');
+        data.forEach(doc => {
+          this.add(doc);
+        });
+      });
+
+      searchInput.addEventListener('input', function () {
+        const query = this.value;
+        if (query) {  
+            const results = idx.search(query);
+            resultsContainer.style.display = results.length ? 'block' : 'none';
+            resultsContainer.innerHTML = results.map(result => {
+                const item = data.find(item => item.uri === result.ref);
+                return `<li><a href="${item.uri}">${item.title}</a></li>`;
+            }).join('');
+        } else {  
+            resultsContainer.style.display = 'none';
+        }
+    });
+    })
+    .catch(error => console.error('Error fetching JSON data:', error));
+
+  document.addEventListener('click', function(event) {
+      const isClickInside = searchContainer.contains(event.target);
+
+      if (!isClickInside) {
+          resultsContainer.style.display = 'none';
+      }
+  });
+});
+</script>
+
+
+                
+                <button id="themeToggle" class="p-2 border rounded">Day/Night</button>
+            </div>
+        </div>
+    </div>
+    <div id="progress-bar"></div>
+
+</header>
+
+  <main>
+    
+    
+
+<style>
+  :root {
+    --dynamic-gradient-border: linear-gradient(to right, #5d00b4, #b400abe7);
+    --dynamic-gradient-border-width: 8px;
+  }
+
+  .meta-item {
+    display: flex;
+    align-items: center;
+    margin-right: 40px;
+  }
+
+  .meta-icon {
+    margin-right: 8px;
+  }
+
+  #progress-bar {
+    position: fixed;
+    top: 8vh;
+    left: 0;
+    width: 0;
+    height: 5px;
+    background-color: #65ff57;
+    z-index: 9999;
+  }
+</style>
+
+
+<div id="progress-bar"></div>
+
+
+
+<div class="box gradient-border">
+  <h2>Multivariate Gauss2 EM</h2>
+</div>
+
+<div class="single-content-container">
+  <div class="flex items-center mb-6">
+    <div class="meta-item text-gray-400">
+      <span class="meta-icon"><i class="fas fa-calendar-alt"></i></span>
+      <span class="text-md font-medium">Publication Date:</span>
+      <span class="text-gray-500">1 January 0001</span>
+    </div>
+    <div class="meta-item text-gray-400">
+      <span class="meta-icon"><i class="fas fa-clock"></i></span>
+      <span class="text-md font-medium">Reading Time:</span>
+      <span class="text-gray-500">1 min</span>
+    </div>
+  </div>
+</div>
+
+<nav id="toc" class="toc-sidebar">
+  
+</nav>
+
+<div class="single-content-container">
+  
+  <nav class="js-toc"></nav>
+  <div class="content js-toc-content"><h1 id="witaj-w-markdown">Witaj w Markdown!</h1>
+<p>Markdown to lekki język znaczników, który można używać do dodawania formatowania do dokumentu tekstowego.</p>
+<h2 id="nagłówki">Nagłówki</h2>
+<p>Użyj <code>#</code> dla największych nagłówków, <code>##</code> dla mniejszych, <code>###</code> jeszcze mniejszych, a <code>####</code> dla najmniejszych.</p>
+<h1 id="nagłówek-1">Nagłówek 1</h1>
+<h2 id="nagłówek-2">Nagłówek 2</h2>
+<h3 id="nagłówek-3">Nagłówek 3</h3>
+<h4 id="nagłówek-4">Nagłówek 4</h4>
+<h2 id="tabele">Tabele</h2>
+<p>Tabele są prostym sposobem na organizowanie informacji.</p>
+<table>
+<thead>
+<tr>
+<th>Nazwa</th>
+<th>Wiek</th>
+<th>Miasto</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Alice</td>
+<td>24</td>
+<td>Warszawa</td>
+</tr>
+<tr>
+<td>Bob</td>
+<td>30</td>
+<td>Kraków</td>
+</tr>
+<tr>
+<td>Charlie</td>
+<td>27</td>
+<td>Poznań</td>
+</tr>
+</tbody>
+</table>
+<h2 id="kod">Kod</h2>
+<p>Użyj pojedynczego akapitu ` dla małego fragmentu kodu i ``` dla bloku kodu.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d8dee9;background-color:#2e3440;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#81a1c1;font-weight:bold">def</span> <span style="color:#88c0d0">hello_world</span><span style="color:#eceff4">():</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#81a1c1">print</span><span style="color:#eceff4">(</span><span style="color:#a3be8c">&#34;Hello, world!&#34;</span><span style="color:#eceff4">)</span>
+</span></span></code></pre></div><h2 id="matematyka-latex">Matematyka LaTex</h2>
+<p>Możesz używać LaTex do formatowania matematyki.</p>
+<p>\begin{align*}
+a &amp;= b + c \
+d &amp;= e + f + g
+\end{align*}</p>
+</div>
+
+  
+  <div class="tags">
+    
+  </div>
+
+  
+  <div class="exercises">
+    
+  </div>
+</div>
+
+  </main>
+  
+  
+  
+  
+<script src="/js/script.js" defer></script>
+<script src="/js/themeToggle.js" defer></script>
+<script src="/js/search.js"> defer</script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.18.2/tocbot.min.js"></script>
+</body>
+
+</html>
