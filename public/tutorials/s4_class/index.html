@@ -322,212 +322,236 @@ document.addEventListener('DOMContentLoaded', (event) => {
 <div class="single-content-container">
   
   <nav class="js-toc"></nav>
-  <div class="content js-toc-content"><h1 id="s4-class">S4 Class</h1>
-<h2 id="introduction">Introduction</h2>
+  <div class="content js-toc-content">
+
+<div id="TOC">
+
+</div>
+
+<div id="s4-class" class="section level1">
+<h1>S4 Class</h1>
+<div id="introduction" class="section level2">
+<h2>Introduction</h2>
 <p>When tackling specific programming challenges, we often look for the right tools to aid our solutions. Much like in the physical world where we might reach for a hammer, pliers, or tweezers depending on the task at hand, in the realm of R programming, the S4 class can be that precise tool. At times, it even resembles a Swiss army knife in its versatility. The S4 class is a mature aspect of the R environment, widely employed, particularly in bioinformatics. While it might not offer the flexibility of R6, its well-structured, organized, and elegant design makes it a go-to choice for many.</p>
-<h2 id="aplications">Aplications</h2>
-<h2 id="basic-s4-class">Basic S4 class</h2>
+</div>
+<div id="aplications" class="section level2">
+<h2>Aplications</h2>
+</div>
+<div id="basic-s4-class" class="section level2">
+<h2>Basic S4 class</h2>
 <p>The simplest class can be created in the following way:</p>
-<div class="highlight"><pre tabindex="0" style="color:#d8dee9;background-color:#2e3440;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#88c0d0">setClass</span><span style="color:#eceff4">(</span>
-</span></span><span style="display:flex;"><span>    Class <span style="color:#81a1c1">=</span> <span style="color:#a3be8c">&#34;Person&#34;</span><span style="color:#eceff4">,</span>
-</span></span><span style="display:flex;"><span>    slots <span style="color:#81a1c1">=</span> <span style="color:#88c0d0">list</span><span style="color:#eceff4">(</span>
-</span></span><span style="display:flex;"><span>        name <span style="color:#81a1c1">=</span> <span style="color:#a3be8c">&#34;character&#34;</span><span style="color:#eceff4">,</span>
-</span></span><span style="display:flex;"><span>        age <span style="color:#81a1c1">=</span> <span style="color:#a3be8c">&#34;numeric&#34;</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#eceff4">)</span>
-</span></span><span style="display:flex;"><span><span style="color:#eceff4">)</span>
-</span></span></code></pre></div><p>Upon execution, class is already registered in S4 system. First part is &lsquo;Person&rsquo;, which is the name of the class. Second important thing is &lsquo;slots&rsquo;. We feeding it with a list, than contains data types of class elements. It organizes class structure.</p>
-<h2 id="class-initialization---create-object">Class initialization - create object</h2>
+<pre class="r"><code>setClass(
+    Class = &quot;Person&quot;,
+    slots = list(
+        name = &quot;character&quot;,
+        age = &quot;numeric&quot;
+    )
+)</code></pre>
+<p>Upon execution, class is already registered in S4 system. First part is ‘Person’, which is the name of the class. Second important thing is ‘slots’. We feeding it with a list, than contains data types of class elements. It organizes class structure.</p>
+</div>
+<div id="class-initialization---create-object" class="section level2">
+<h2>Class initialization - create object</h2>
 <p>Because class is already registered, we can initialize it with:</p>
-<div class="highlight"><pre tabindex="0" style="color:#d8dee9;background-color:#2e3440;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>person <span style="color:#81a1c1">&lt;-</span> <span style="color:#88c0d0">new</span><span style="color:#eceff4">(</span><span style="color:#a3be8c">&#34;Person&#34;</span><span style="color:#eceff4">,</span> name <span style="color:#81a1c1">=</span> <span style="color:#a3be8c">&#34;Ezio Accinore&#34;</span><span style="color:#eceff4">,</span> age <span style="color:#81a1c1">=</span> <span style="color:#b48ead">36</span><span style="color:#eceff4">)</span>
-</span></span><span style="display:flex;"><span>person
-</span></span></code></pre></div><pre tabindex="0"><code>## An object of class &#34;Person&#34;
-## Slot &#34;name&#34;:
-## [1] &#34;Ezio Accinore&#34;
+<pre class="r"><code>person &lt;- new(&quot;Person&quot;, name = &quot;Ezio Accinore&quot;, age = 36)
+person</code></pre>
+<pre><code>## An object of class &quot;Person&quot;
+## Slot &quot;name&quot;:
+## [1] &quot;Ezio Accinore&quot;
 ## 
-## Slot &#34;age&#34;:
-## [1] 36
-</code></pre><p>After execution, we receive structured list of previously defined slots. Simple and <strong>elegante</strong>.</p>
-<h2 id="generic-function">Generic function</h2>
-<p>First, we will start with generic function. It is &rsquo;template&rsquo; which can be used by different classes:</p>
-<div class="highlight"><pre tabindex="0" style="color:#d8dee9;background-color:#2e3440;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#88c0d0">setGeneric</span><span style="color:#eceff4">(</span><span style="color:#a3be8c">&#34;describe&#34;</span><span style="color:#eceff4">,</span> def <span style="color:#81a1c1">=</span> <span style="color:#88c0d0">function</span><span style="color:#eceff4">(</span>object<span style="color:#eceff4">)</span> <span style="color:#88c0d0">standardGeneric</span><span style="color:#eceff4">(</span><span style="color:#a3be8c">&#34;describe&#34;</span><span style="color:#eceff4">))</span>
-</span></span></code></pre></div><pre tabindex="0"><code>## [1] &#34;describe&#34;
-</code></pre><div class="highlight"><pre tabindex="0" style="color:#d8dee9;background-color:#2e3440;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>describe
-</span></span></code></pre></div><pre tabindex="0"><code>## standardGeneric for &#34;describe&#34; defined from package &#34;.GlobalEnv&#34;
+## Slot &quot;age&quot;:
+## [1] 36</code></pre>
+<p>After execution, we receive structured list of previously defined slots. Simple and <strong>elegante</strong>.</p>
+</div>
+<div id="generic-function" class="section level2">
+<h2>Generic function</h2>
+<p>First, we will start with generic function. It is ‘template’ which can be used by different classes:</p>
+<pre class="r"><code>setGeneric(&quot;describe&quot;, def = function(object) standardGeneric(&quot;describe&quot;))</code></pre>
+<pre><code>## [1] &quot;describe&quot;</code></pre>
+<pre class="r"><code>describe</code></pre>
+<pre><code>## standardGeneric for &quot;describe&quot; defined from package &quot;.GlobalEnv&quot;
 ## 
 ## function (object) 
-## standardGeneric(&#34;describe&#34;)
-## &lt;environment: 0x5654cbe282f0&gt;
+## standardGeneric(&quot;describe&quot;)
+## &lt;environment: 0x556061e77d00&gt;
 ## Methods may be defined for arguments: object
-## Use  showMethods(describe)  for currently available ones.
-</code></pre><p>From the executed code we can read that to check if there are any existing methods exists <code>showMethods(describe)</code> should be used. Let us do that:</p>
-<div class="highlight"><pre tabindex="0" style="color:#d8dee9;background-color:#2e3440;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#88c0d0">showMethods</span><span style="color:#eceff4">(</span>describe<span style="color:#eceff4">)</span>
-</span></span></code></pre></div><pre tabindex="0"><code>## Function: describe (package .GlobalEnv)
-## &lt;No methods&gt;
-</code></pre><p>No methods are defined, which is not surprising as we did not defined any. Why do we need them?</p>
-<h2 id="methods">Methods</h2>
-<p>When you see the equation <code>24 + 32</code>, you instinctively understand that you&rsquo;re supposed to add the two numbers. This understanding comes from the fact that you&rsquo;ve learned that the `+` symbol represents the <strong>addition</strong> operation. Think of this operation as a <strong>method</strong> applied to the class of real numbers.</p>
-<p>Now, consider the expression <code>turtle + cow</code>. Without any defined context, it&rsquo;s unclear what the <code>+</code> operation should do with these two words. However, we can define a method for this. For instance, our method might dictate that the second word comes before the first, and they are concatenated without spaces. Therefore, <code>turtle + cow</code> would result in <code>cowturtle</code>. But remember, this is just one possible method we&rsquo;ve defined. Methods can be as diverse and creative as we want them to be!</p>
-<p>In the R programming language, this concept of methods allows us to define specific actions for objects of different classes. For example, after introducing a generic function like <code>describe</code>, we can specify how it should behave when applied to an object of the &ldquo;Person&rdquo; class.</p>
-<div class="highlight"><pre tabindex="0" style="color:#d8dee9;background-color:#2e3440;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#88c0d0">setMethod</span><span style="color:#eceff4">(</span><span style="color:#a3be8c">&#34;describe&#34;</span><span style="color:#eceff4">,</span> <span style="color:#88c0d0">signature</span><span style="color:#eceff4">(</span>object <span style="color:#81a1c1">=</span> <span style="color:#a3be8c">&#34;Person&#34;</span><span style="color:#eceff4">),</span> <span style="color:#88c0d0">function</span><span style="color:#eceff4">(</span>object<span style="color:#eceff4">)</span> <span style="color:#eceff4">{</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#88c0d0">cat</span><span style="color:#eceff4">(</span><span style="color:#88c0d0">paste</span><span style="color:#eceff4">(</span><span style="color:#a3be8c">&#34;This is&#34;</span><span style="color:#eceff4">,</span> object<span style="color:#81a1c1">@</span>name<span style="color:#eceff4">,</span> <span style="color:#a3be8c">&#34;who is&#34;</span><span style="color:#eceff4">,</span> object<span style="color:#81a1c1">@</span>age<span style="color:#eceff4">,</span> <span style="color:#a3be8c">&#34;years old.\n&#34;</span><span style="color:#eceff4">))</span>
-</span></span><span style="display:flex;"><span><span style="color:#eceff4">})</span>
-</span></span><span style="display:flex;"><span><span style="color:#88c0d0">describe</span><span style="color:#eceff4">(</span>person<span style="color:#eceff4">)</span>
-</span></span></code></pre></div><pre tabindex="0"><code>## This is Ezio Accinore who is 36 years old.
-</code></pre><p>Note, that in order to refer to elements in the <em>object</em> we are using <code>@</code>.
+## Use  showMethods(describe)  for currently available ones.</code></pre>
+<p>From the executed code we can read that to check if there are any existing methods exists <code>showMethods(describe)</code> should be used. Let us do that:</p>
+<pre class="r"><code>showMethods(describe)</code></pre>
+<pre><code>## Function: describe (package .GlobalEnv)
+## &lt;No methods&gt;</code></pre>
+<p>No methods are defined, which is not surprising as we did not defined any. Why do we need them?</p>
+</div>
+<div id="methods" class="section level2">
+<h2>Methods</h2>
+<p>When you see the equation <code>24 + 32</code>, you instinctively understand that you’re supposed to add the two numbers. This understanding comes from the fact that you’ve learned that the `+` symbol represents the <strong>addition</strong> operation. Think of this operation as a <strong>method</strong> applied to the class of real numbers.</p>
+<p>Now, consider the expression <code>turtle + cow</code>. Without any defined context, it’s unclear what the <code>+</code> operation should do with these two words. However, we can define a method for this. For instance, our method might dictate that the second word comes before the first, and they are concatenated without spaces. Therefore, <code>turtle + cow</code> would result in <code>cowturtle</code>. But remember, this is just one possible method we’ve defined. Methods can be as diverse and creative as we want them to be!</p>
+<p>In the R programming language, this concept of methods allows us to define specific actions for objects of different classes. For example, after introducing a generic function like <code>describe</code>, we can specify how it should behave when applied to an object of the “Person” class.</p>
+<pre class="r"><code>setMethod(&quot;describe&quot;, signature(object = &quot;Person&quot;), function(object) {
+    cat(paste(&quot;This is&quot;, object@name, &quot;who is&quot;, object@age, &quot;years old.\n&quot;))
+})
+describe(person)</code></pre>
+<pre><code>## This is Ezio Accinore who is 36 years old.</code></pre>
+<p>Note, that in order to refer to elements in the <em>object</em> we are using <code>@</code>.
 Now, instead of going further immediately, we can make this text just a little more fancy:</p>
-<div class="highlight"><pre tabindex="0" style="color:#d8dee9;background-color:#2e3440;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#88c0d0">setMethod</span><span style="color:#eceff4">(</span><span style="color:#a3be8c">&#34;describe&#34;</span><span style="color:#eceff4">,</span> <span style="color:#88c0d0">signature</span><span style="color:#eceff4">(</span>object <span style="color:#81a1c1">=</span> <span style="color:#a3be8c">&#34;Person&#34;</span><span style="color:#eceff4">),</span> <span style="color:#88c0d0">function</span><span style="color:#eceff4">(</span>object<span style="color:#eceff4">)</span> <span style="color:#eceff4">{</span>
-</span></span><span style="display:flex;"><span>    full_text <span style="color:#81a1c1">&lt;-</span> <span style="color:#88c0d0">paste</span><span style="color:#eceff4">(</span><span style="color:#a3be8c">&#34; This is&#34;</span><span style="color:#eceff4">,</span> <span style="color:#eceff4">(</span>object<span style="color:#81a1c1">@</span>name<span style="color:#eceff4">),</span> 
-</span></span><span style="display:flex;"><span>                       <span style="color:#a3be8c">&#34;who is&#34;</span><span style="color:#eceff4">,</span> <span style="color:#eceff4">(</span>object<span style="color:#81a1c1">@</span>age<span style="color:#eceff4">),</span> 
-</span></span><span style="display:flex;"><span>                       <span style="color:#a3be8c">&#34;years old.\n&#34;</span><span style="color:#eceff4">)</span>
-</span></span><span style="display:flex;"><span>    nchars <span style="color:#81a1c1">&lt;-</span> <span style="color:#88c0d0">nchar</span><span style="color:#eceff4">(</span><span style="color:#88c0d0">paste</span><span style="color:#eceff4">(</span><span style="color:#a3be8c">&#34; This is&#34;</span><span style="color:#eceff4">,</span> object<span style="color:#81a1c1">@</span>name<span style="color:#eceff4">,</span> <span style="color:#a3be8c">&#34;who is&#34;</span><span style="color:#eceff4">,</span> object<span style="color:#81a1c1">@</span>age<span style="color:#eceff4">,</span> <span style="color:#a3be8c">&#34;years old.\n&#34;</span><span style="color:#eceff4">))</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#88c0d0">cat</span><span style="color:#eceff4">(</span><span style="color:#a3be8c">&#34; &#34;</span><span style="color:#eceff4">)</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#88c0d0">cat</span><span style="color:#eceff4">(</span><span style="color:#88c0d0">paste0</span><span style="color:#eceff4">(</span><span style="color:#88c0d0">rep</span><span style="color:#eceff4">(</span><span style="color:#a3be8c">&#34;x-&#34;</span><span style="color:#eceff4">,</span> times <span style="color:#81a1c1">=</span> <span style="color:#88c0d0">floor</span><span style="color:#eceff4">(</span>nchars<span style="color:#81a1c1">/</span><span style="color:#b48ead">2</span><span style="color:#eceff4">)),</span> collapse <span style="color:#81a1c1">=</span> <span style="color:#a3be8c">&#34;&#34;</span><span style="color:#eceff4">),</span> <span style="color:#a3be8c">&#34;\n\n&#34;</span><span style="color:#eceff4">,</span>
-</span></span><span style="display:flex;"><span>        full_text<span style="color:#eceff4">,</span> <span style="color:#a3be8c">&#34;\n&#34;</span><span style="color:#eceff4">,</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#88c0d0">paste0</span><span style="color:#eceff4">(</span><span style="color:#88c0d0">rep</span><span style="color:#eceff4">(</span><span style="color:#a3be8c">&#34;x-&#34;</span><span style="color:#eceff4">,</span> times <span style="color:#81a1c1">=</span> <span style="color:#88c0d0">floor</span><span style="color:#eceff4">(</span>nchars<span style="color:#81a1c1">/</span><span style="color:#b48ead">2</span><span style="color:#eceff4">)),</span> collapse <span style="color:#81a1c1">=</span> <span style="color:#a3be8c">&#34;&#34;</span><span style="color:#eceff4">),</span> <span style="color:#a3be8c">&#34;\n&#34;</span><span style="color:#eceff4">)</span>
-</span></span><span style="display:flex;"><span><span style="color:#eceff4">})</span>
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#d8dee9;background-color:#2e3440;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#88c0d0">describe</span><span style="color:#eceff4">(</span>person<span style="color:#eceff4">)</span>
-</span></span></code></pre></div><pre tabindex="0"><code>##  x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x- 
+<pre class="r"><code>setMethod(&quot;describe&quot;, signature(object = &quot;Person&quot;), function(object) {
+    full_text &lt;- paste(&quot; This is&quot;, (object@name), 
+                       &quot;who is&quot;, (object@age), 
+                       &quot;years old.\n&quot;)
+    nchars &lt;- nchar(paste(&quot; This is&quot;, object@name, &quot;who is&quot;, object@age, &quot;years old.\n&quot;))
+    cat(&quot; &quot;)
+    cat(paste0(rep(&quot;x-&quot;, times = floor(nchars/2)), collapse = &quot;&quot;), &quot;\n\n&quot;,
+        full_text, &quot;\n&quot;,
+        paste0(rep(&quot;x-&quot;, times = floor(nchars/2)), collapse = &quot;&quot;), &quot;\n&quot;)
+})</code></pre>
+<pre class="r"><code>describe(person)</code></pre>
+<pre><code>##  x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x- 
 ## 
 ##   This is Ezio Accinore who is 36 years old.
 ##  
-##  x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-
-</code></pre><h2 id="inheritance">Inheritance</h2>
-<p>Imagine holding a sturdy stick. It fits comfortably in your hand, allowing you to grip it firmly and swing it with ease. Now, let&rsquo;s attach a hammerhead to that stick. What do we get? A hammer. But this isn&rsquo;t just any hammer; it&rsquo;s a tool that retains the easy grip and swingability of the original stick. Here, the stick represents our base class.</p>
-<p>By adding the hammerhead, we&rsquo;ve essentially created a new class, the &ldquo;hammer&rdquo;, built upon the properties of the stick. We didn&rsquo;t need to reinvent the way we hold or swing; we simply extended the functionality of the stick.</p>
-<p>Now, imagine further modifying this hammer by adding an axe blade. This new tool not only inherits the grip and swing of the stick but also the hammering function of the hammer. With this one tool, you can grip, swing, hammer nails, and chop wood. This evolution of tools mirrors the concept of inheritance in object-oriented programming. We don&rsquo;t start from scratch every time. Instead, we specialize and build upon existing classes, creating efficient solutions for more complex challenges.</p>
-<h3 id="crafting-the-derived-class">Crafting the Derived Class</h3>
-<p>In the world of R&rsquo;s S4 system, this idea translates into using the contains argument in the setClass function. Let&rsquo;s say we have our basic Person class. Now, we want to create an Employee class that has everything a Person has, but with some added features:</p>
-<div class="highlight"><pre tabindex="0" style="color:#d8dee9;background-color:#2e3440;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#88c0d0">setClass</span><span style="color:#eceff4">(</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#a3be8c">&#34;Employee&#34;</span><span style="color:#eceff4">,</span>
-</span></span><span style="display:flex;"><span>  slots <span style="color:#81a1c1">=</span> <span style="color:#88c0d0">list</span><span style="color:#eceff4">(</span>
-</span></span><span style="display:flex;"><span>    position <span style="color:#81a1c1">=</span> <span style="color:#a3be8c">&#34;character&#34;</span><span style="color:#eceff4">,</span>
-</span></span><span style="display:flex;"><span>    salary <span style="color:#81a1c1">=</span> <span style="color:#a3be8c">&#34;numeric&#34;</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#eceff4">),</span>
-</span></span><span style="display:flex;"><span>  contains <span style="color:#81a1c1">=</span> <span style="color:#a3be8c">&#34;Person&#34;</span>
-</span></span><span style="display:flex;"><span><span style="color:#eceff4">)</span>
-</span></span></code></pre></div><p>So, our Employee is still a person (inherits name and age slots from Person), but with a job (position) and a paycheck (salary). Let&rsquo;s create this new class:</p>
-<div class="highlight"><pre tabindex="0" style="color:#d8dee9;background-color:#2e3440;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>employee <span style="color:#81a1c1">&lt;-</span> <span style="color:#88c0d0">new</span><span style="color:#eceff4">(</span><span style="color:#a3be8c">&#34;Employee&#34;</span><span style="color:#eceff4">,</span> name <span style="color:#81a1c1">=</span> <span style="color:#a3be8c">&#34;John Doe&#34;</span><span style="color:#eceff4">,</span> age <span style="color:#81a1c1">=</span> <span style="color:#b48ead">28</span><span style="color:#eceff4">,</span> position <span style="color:#81a1c1">=</span> <span style="color:#a3be8c">&#34;Analyst&#34;</span><span style="color:#eceff4">,</span> salary <span style="color:#81a1c1">=</span> <span style="color:#b48ead">5000</span><span style="color:#eceff4">)</span>
-</span></span><span style="display:flex;"><span>employee
-</span></span></code></pre></div><pre tabindex="0"><code>## An object of class &#34;Employee&#34;
-## Slot &#34;position&#34;:
-## [1] &#34;Analyst&#34;
+##  x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-</code></pre>
+</div>
+<div id="inheritance" class="section level2">
+<h2>Inheritance</h2>
+<p>Imagine holding a sturdy stick. It fits comfortably in your hand, allowing you to grip it firmly and swing it with ease. Now, let’s attach a hammerhead to that stick. What do we get? A hammer. But this isn’t just any hammer; it’s a tool that retains the easy grip and swingability of the original stick. Here, the stick represents our base class.</p>
+<p>By adding the hammerhead, we’ve essentially created a new class, the “hammer”, built upon the properties of the stick. We didn’t need to reinvent the way we hold or swing; we simply extended the functionality of the stick.</p>
+<p>Now, imagine further modifying this hammer by adding an axe blade. This new tool not only inherits the grip and swing of the stick but also the hammering function of the hammer. With this one tool, you can grip, swing, hammer nails, and chop wood. This evolution of tools mirrors the concept of inheritance in object-oriented programming. We don’t start from scratch every time. Instead, we specialize and build upon existing classes, creating efficient solutions for more complex challenges.</p>
+<div id="crafting-the-derived-class" class="section level3">
+<h3>Crafting the Derived Class</h3>
+<p>In the world of R’s S4 system, this idea translates into using the contains argument in the setClass function. Let’s say we have our basic Person class. Now, we want to create an Employee class that has everything a Person has, but with some added features:</p>
+<pre class="r"><code>setClass(
+  &quot;Employee&quot;,
+  slots = list(
+    position = &quot;character&quot;,
+    salary = &quot;numeric&quot;
+  ),
+  contains = &quot;Person&quot;
+)</code></pre>
+<p>So, our Employee is still a person (inherits name and age slots from Person), but with a job (position) and a paycheck (salary). Let’s create this new class:</p>
+<pre class="r"><code>employee &lt;- new(&quot;Employee&quot;, name = &quot;John Doe&quot;, age = 28, position = &quot;Analyst&quot;, salary = 5000)
+employee</code></pre>
+<pre><code>## An object of class &quot;Employee&quot;
+## Slot &quot;position&quot;:
+## [1] &quot;Analyst&quot;
 ## 
-## Slot &#34;salary&#34;:
+## Slot &quot;salary&quot;:
 ## [1] 5000
 ## 
-## Slot &#34;name&#34;:
-## [1] &#34;John Doe&#34;
+## Slot &quot;name&quot;:
+## [1] &quot;John Doe&quot;
 ## 
-## Slot &#34;age&#34;:
-## [1] 28
-</code></pre><p>As you can see, we have added all arguments from previously created class &ldquo;Person&rdquo; and new class &ldquo;Employee&rdquo;. What is interesting, we can still use previously created method for class Person, on the class Employee.</p>
-<div class="highlight"><pre tabindex="0" style="color:#d8dee9;background-color:#2e3440;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#88c0d0">describe</span><span style="color:#eceff4">(</span>employee<span style="color:#eceff4">)</span>
-</span></span></code></pre></div><p>x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-</p>
+## Slot &quot;age&quot;:
+## [1] 28</code></pre>
+<p>As you can see, we have added all arguments from previously created class “Person” and new class “Employee”. What is interesting, we can still use previously created method for class Person, on the class Employee.</p>
+<pre class="r"><code>describe(employee)</code></pre>
+<p>x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-</p>
 <p>This is John Doe who is 28 years old.</p>
 <p>x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-</p>
 <p>Since we have a new class, we can add new method of descriptions, more suitable for our new class:</p>
-<div class="highlight"><pre tabindex="0" style="color:#d8dee9;background-color:#2e3440;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#88c0d0">setMethod</span><span style="color:#eceff4">(</span><span style="color:#a3be8c">&#34;describe&#34;</span><span style="color:#eceff4">,</span> <span style="color:#88c0d0">signature</span><span style="color:#eceff4">(</span>object <span style="color:#81a1c1">=</span> <span style="color:#a3be8c">&#34;Employee&#34;</span><span style="color:#eceff4">),</span> <span style="color:#88c0d0">function</span><span style="color:#eceff4">(</span>object<span style="color:#eceff4">){</span>
-</span></span><span style="display:flex;"><span>    full_text <span style="color:#81a1c1">&lt;-</span> <span style="color:#88c0d0">paste</span><span style="color:#eceff4">(</span><span style="color:#a3be8c">&#34; This is&#34;</span><span style="color:#eceff4">,</span> object<span style="color:#81a1c1">@</span>name<span style="color:#eceff4">,</span> 
-</span></span><span style="display:flex;"><span>                       <span style="color:#a3be8c">&#34;who is&#34;</span><span style="color:#eceff4">,</span> object<span style="color:#81a1c1">@</span>age<span style="color:#eceff4">,</span> 
-</span></span><span style="display:flex;"><span>                       <span style="color:#a3be8c">&#34;years old. He is&#34;</span><span style="color:#eceff4">,</span> object<span style="color:#81a1c1">@</span>position<span style="color:#eceff4">,</span> 
-</span></span><span style="display:flex;"><span>                       <span style="color:#a3be8c">&#34;and earns&#34;</span><span style="color:#eceff4">,</span> object<span style="color:#81a1c1">@</span>salary<span style="color:#eceff4">,</span> <span style="color:#a3be8c">&#34;$.\n&#34;</span><span style="color:#eceff4">)</span>
-</span></span><span style="display:flex;"><span>    nchars <span style="color:#81a1c1">&lt;-</span> <span style="color:#88c0d0">nchar</span><span style="color:#eceff4">(</span><span style="color:#88c0d0">paste</span><span style="color:#eceff4">(</span>full_text<span style="color:#eceff4">))</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#88c0d0">cat</span><span style="color:#eceff4">(</span><span style="color:#a3be8c">&#34; &#34;</span><span style="color:#eceff4">)</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#88c0d0">cat</span><span style="color:#eceff4">(</span><span style="color:#88c0d0">paste0</span><span style="color:#eceff4">(</span><span style="color:#88c0d0">rep</span><span style="color:#eceff4">(</span><span style="color:#a3be8c">&#34;x-&#34;</span><span style="color:#eceff4">,</span> times <span style="color:#81a1c1">=</span> <span style="color:#88c0d0">floor</span><span style="color:#eceff4">(</span>nchars<span style="color:#81a1c1">/</span><span style="color:#b48ead">2</span><span style="color:#eceff4">)),</span> collapse <span style="color:#81a1c1">=</span> <span style="color:#a3be8c">&#34;&#34;</span><span style="color:#eceff4">),</span> <span style="color:#a3be8c">&#34;\n\n&#34;</span><span style="color:#eceff4">,</span>
-</span></span><span style="display:flex;"><span>        full_text<span style="color:#eceff4">,</span> <span style="color:#a3be8c">&#34;\n&#34;</span><span style="color:#eceff4">,</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#88c0d0">paste0</span><span style="color:#eceff4">(</span><span style="color:#88c0d0">rep</span><span style="color:#eceff4">(</span><span style="color:#a3be8c">&#34;x-&#34;</span><span style="color:#eceff4">,</span> times <span style="color:#81a1c1">=</span> <span style="color:#88c0d0">floor</span><span style="color:#eceff4">(</span>nchars<span style="color:#81a1c1">/</span><span style="color:#b48ead">2</span><span style="color:#eceff4">)),</span> collapse <span style="color:#81a1c1">=</span> <span style="color:#a3be8c">&#34;&#34;</span><span style="color:#eceff4">),</span> <span style="color:#a3be8c">&#34;\n&#34;</span><span style="color:#eceff4">)</span>
-</span></span><span style="display:flex;"><span><span style="color:#eceff4">})</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#88c0d0">describe</span><span style="color:#eceff4">(</span>employee<span style="color:#eceff4">)</span>
-</span></span></code></pre></div><pre tabindex="0"><code>##  x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x- 
+<pre class="r"><code>setMethod(&quot;describe&quot;, signature(object = &quot;Employee&quot;), function(object){
+    full_text &lt;- paste(&quot; This is&quot;, object@name, 
+                       &quot;who is&quot;, object@age, 
+                       &quot;years old. He is&quot;, object@position, 
+                       &quot;and earns&quot;, object@salary, &quot;$.\n&quot;)
+    nchars &lt;- nchar(paste(full_text))
+    cat(&quot; &quot;)
+    cat(paste0(rep(&quot;x-&quot;, times = floor(nchars/2)), collapse = &quot;&quot;), &quot;\n\n&quot;,
+        full_text, &quot;\n&quot;,
+        paste0(rep(&quot;x-&quot;, times = floor(nchars/2)), collapse = &quot;&quot;), &quot;\n&quot;)
+})
+
+describe(employee)</code></pre>
+<pre><code>##  x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x- 
 ## 
 ##   This is John Doe who is 28 years old. He is Analyst and earns 5000 $.
 ##  
-##  x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-
-</code></pre><h3 id="methods-without-a-generic-not-possible">Methods without a Generic? Not Possible!</h3>
-<p>In the S4 system, you cannot define a method without first establishing a generic function. Think of the generic function as a template or a blueprint. When you call a method, R looks for this blueprint to understand the expected behavior and then dispatches to the specific method associated with the object&rsquo;s class.</p>
-<p>Let&rsquo;s see what happens when we try to define a method without its corresponding generic:</p>
-<div class="highlight"><pre tabindex="0" style="color:#d8dee9;background-color:#2e3440;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#616e87;font-style:italic"># This will throw an error because we haven&#39;t defined a generic function for &#39;ncharName&#39;</span>
-</span></span><span style="display:flex;"><span><span style="color:#88c0d0">setMethod</span><span style="color:#eceff4">(</span><span style="color:#a3be8c">&#34;ncharName&#34;</span><span style="color:#eceff4">,</span> <span style="color:#88c0d0">signature</span><span style="color:#eceff4">(</span>object <span style="color:#81a1c1">=</span> <span style="color:#a3be8c">&#34;Person&#34;</span><span style="color:#eceff4">),</span> <span style="color:#88c0d0">function</span><span style="color:#eceff4">(</span>object<span style="color:#eceff4">){</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#88c0d0">cat</span><span style="color:#eceff4">(</span>object<span style="color:#81a1c1">@</span>name<span style="color:#eceff4">,</span> <span style="color:#a3be8c">&#34;contains: &#34;</span><span style="color:#eceff4">,</span> <span style="color:#88c0d0">nchar</span><span style="color:#eceff4">(</span>object<span style="color:#81a1c1">@</span>name<span style="color:#eceff4">),</span> <span style="color:#a3be8c">&#34;characters&#34;</span><span style="color:#eceff4">,</span> <span style="color:#a3be8c">&#34;\n&#34;</span><span style="color:#eceff4">)</span>
-</span></span><span style="display:flex;"><span><span style="color:#eceff4">})</span>
-</span></span></code></pre></div><pre tabindex="0"><code>## Error in setMethod(&#34;ncharName&#34;, signature(object = &#34;Person&#34;), function(object) {: no existing definition for function &#39;ncharName&#39;
-</code></pre><p>To remedy this, we&rsquo;ll first set up a generic function for ncharName. In this generic, we&rsquo;ll also include some default behavior to be executed when a specific method for a class isn&rsquo;t found:</p>
-<div class="highlight"><pre tabindex="0" style="color:#d8dee9;background-color:#2e3440;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#88c0d0">setGeneric</span><span style="color:#eceff4">(</span><span style="color:#a3be8c">&#34;ncharName&#34;</span><span style="color:#eceff4">,</span> def <span style="color:#81a1c1">=</span> <span style="color:#88c0d0">function</span><span style="color:#eceff4">(</span>object<span style="color:#eceff4">){</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#88c0d0">cat</span><span style="color:#eceff4">(</span><span style="color:#a3be8c">&#34;&lt;---Here starts the output from generic function---&gt;\n&#34;</span><span style="color:#eceff4">)</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#88c0d0">cat</span><span style="color:#eceff4">(</span><span style="color:#a3be8c">&#34;Here we set the default behaviour for this generic function. \n
-</span></span></span><span style="display:flex;"><span><span style="color:#a3be8c">        It shows class then dispatches to appropriate method if such exists. \n&#34;</span><span style="color:#eceff4">)</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#88c0d0">cat</span><span style="color:#eceff4">(</span><span style="color:#a3be8c">&#34;Class: &#34;</span><span style="color:#eceff4">,</span> <span style="color:#88c0d0">class</span><span style="color:#eceff4">(</span>object<span style="color:#eceff4">),</span> <span style="color:#a3be8c">&#34;\n&#34;</span><span style="color:#eceff4">)</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#88c0d0">standardGeneric</span><span style="color:#eceff4">(</span><span style="color:#a3be8c">&#34;ncharName&#34;</span><span style="color:#eceff4">)</span>
-</span></span><span style="display:flex;"><span><span style="color:#eceff4">})</span>
-</span></span></code></pre></div><p>[1] &ldquo;ncharName&rdquo;</p>
-<div class="highlight"><pre tabindex="0" style="color:#d8dee9;background-color:#2e3440;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#88c0d0">ncharName</span><span style="color:#eceff4">(</span>person<span style="color:#eceff4">)</span>
-</span></span></code></pre></div><pre tabindex="0"><code>## &lt;---Here starts the output from generic function---&gt;
+##  x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-</code></pre>
+</div>
+<div id="methods-without-a-generic-not-possible" class="section level3">
+<h3>Methods without a Generic? Not Possible!</h3>
+<p>In the S4 system, you cannot define a method without first establishing a generic function. Think of the generic function as a template or a blueprint. When you call a method, R looks for this blueprint to understand the expected behavior and then dispatches to the specific method associated with the object’s class.</p>
+<p>Let’s see what happens when we try to define a method without its corresponding generic:</p>
+<pre class="r"><code># This will throw an error because we haven&#39;t defined a generic function for &#39;ncharName&#39;
+setMethod(&quot;ncharName&quot;, signature(object = &quot;Person&quot;), function(object){
+    cat(object@name, &quot;contains: &quot;, nchar(object@name), &quot;characters&quot;, &quot;\n&quot;)
+})</code></pre>
+<pre><code>## Error in setMethod(&quot;ncharName&quot;, signature(object = &quot;Person&quot;), function(object) {: no existing definition for function &#39;ncharName&#39;</code></pre>
+<p>To remedy this, we’ll first set up a generic function for ncharName. In this generic, we’ll also include some default behavior to be executed when a specific method for a class isn’t found:</p>
+<pre class="r"><code>setGeneric(&quot;ncharName&quot;, def = function(object){
+    cat(&quot;&lt;---Here starts the output from generic function---&gt;\n&quot;)
+    cat(&quot;Here we set the default behaviour for this generic function. \n
+        It shows class then dispatches to appropriate method if such exists. \n&quot;)
+    cat(&quot;Class: &quot;, class(object), &quot;\n&quot;)
+    standardGeneric(&quot;ncharName&quot;)
+})</code></pre>
+<p>[1] “ncharName”</p>
+<pre class="r"><code>ncharName(person)</code></pre>
+<pre><code>## &lt;---Here starts the output from generic function---&gt;
 ## Here we set the default behaviour for this generic function. 
 ## 
 ##         It shows class then dispatches to appropriate method if such exists. 
-## Class:  Person
-</code></pre><pre tabindex="0"><code>## Error in (function (classes, fdef, mtable) : unable to find an inherited method for function &#39;ncharName&#39; for signature &#39;&#34;Person&#34;&#39;
-</code></pre><p>Upon execution, but without method set, we receive only part defined in generic. Now, With the generic in place, we can define our method for the &lsquo;Person&rsquo; class:</p>
-<div class="highlight"><pre tabindex="0" style="color:#d8dee9;background-color:#2e3440;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#88c0d0">setMethod</span><span style="color:#eceff4">(</span><span style="color:#a3be8c">&#34;ncharName&#34;</span><span style="color:#eceff4">,</span> <span style="color:#88c0d0">signature</span><span style="color:#eceff4">(</span>object <span style="color:#81a1c1">=</span> <span style="color:#a3be8c">&#34;Person&#34;</span><span style="color:#eceff4">),</span> <span style="color:#88c0d0">function</span><span style="color:#eceff4">(</span>object<span style="color:#eceff4">){</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#88c0d0">cat</span><span style="color:#eceff4">(</span><span style="color:#a3be8c">&#34;\n &lt;---Here starts the output from the method---&gt;\n&#34;</span><span style="color:#eceff4">)</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#88c0d0">cat</span><span style="color:#eceff4">(</span>object<span style="color:#81a1c1">@</span>name<span style="color:#eceff4">,</span> <span style="color:#a3be8c">&#34;contains: &#34;</span><span style="color:#eceff4">,</span> <span style="color:#88c0d0">nchar</span><span style="color:#eceff4">(</span>object<span style="color:#81a1c1">@</span>name<span style="color:#eceff4">),</span> <span style="color:#a3be8c">&#34;characters&#34;</span><span style="color:#eceff4">,</span> <span style="color:#a3be8c">&#34;\n&#34;</span><span style="color:#eceff4">)</span>
-</span></span><span style="display:flex;"><span><span style="color:#eceff4">})</span>
-</span></span><span style="display:flex;"><span><span style="color:#88c0d0">ncharName</span><span style="color:#eceff4">(</span>person<span style="color:#eceff4">)</span>
-</span></span></code></pre></div><pre tabindex="0"><code>## &lt;---Here starts the output from generic function---&gt;
+## Class:  Person</code></pre>
+<pre><code>## Error in (function (classes, fdef, mtable) : unable to find an inherited method for function &#39;ncharName&#39; for signature &#39;&quot;Person&quot;&#39;</code></pre>
+<p>Upon execution, but without method set, we receive only part defined in generic. Now, With the generic in place, we can define our method for the ‘Person’ class:</p>
+<pre class="r"><code>setMethod(&quot;ncharName&quot;, signature(object = &quot;Person&quot;), function(object){
+    cat(&quot;\n &lt;---Here starts the output from the method---&gt;\n&quot;)
+    cat(object@name, &quot;contains: &quot;, nchar(object@name), &quot;characters&quot;, &quot;\n&quot;)
+})
+ncharName(person)</code></pre>
+<pre><code>## &lt;---Here starts the output from generic function---&gt;
 ## Here we set the default behaviour for this generic function. 
 ## 
 ##         It shows class then dispatches to appropriate method if such exists. 
 ## Class:  Person 
 ## 
 ##  &lt;---Here starts the output from the method---&gt;
-## Ezio Accinore contains:  13 characters
-</code></pre><p>Then, when method is undefined, we will see this:</p>
-<div class="highlight"><pre tabindex="0" style="color:#d8dee9;background-color:#2e3440;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#88c0d0">ncharName</span><span style="color:#eceff4">(</span>employee<span style="color:#eceff4">)</span>
-</span></span></code></pre></div><pre tabindex="0"><code>## &lt;---Here starts the output from generic function---&gt;
+## Ezio Accinore contains:  13 characters</code></pre>
+<p>Then, when method is undefined, we will see this:</p>
+<pre class="r"><code>ncharName(employee)</code></pre>
+<pre><code>## &lt;---Here starts the output from generic function---&gt;
 ## Here we set the default behaviour for this generic function. 
 ## 
 ##         It shows class then dispatches to appropriate method if such exists. 
 ## Class:  Employee 
 ## 
 ##  &lt;---Here starts the output from the method---&gt;
-## John Doe contains:  8 characters
-</code></pre><h2 id="accessors-and-mutators-in-s4">Accessors and Mutators in S4</h2>
-<p>Imagine a bank vault. You wouldn&rsquo;t want just anyone to access its contents or change them without oversight. Similarly, in object-oriented programming, especially with S4 classes in R, we often need controlled access to the internal data of an object. This is where accessor (getter) and mutator (setter) methods come in.
+## John Doe contains:  8 characters</code></pre>
+</div>
+</div>
+<div id="accessors-and-mutators-in-s4" class="section level2">
+<h2>Accessors and Mutators in S4</h2>
+<p>Imagine a bank vault. You wouldn’t want just anyone to access its contents or change them without oversight. Similarly, in object-oriented programming, especially with S4 classes in R, we often need controlled access to the internal data of an object. This is where accessor (getter) and mutator (setter) methods come in.
 In S4, we use specific methods to get or set the values of slots:</p>
-<h4 id="accessor-getter"><strong>Accessor (Getter)</strong></h4>
+<div id="accessor-getter" class="section level4">
+<h4><strong>Accessor (Getter)</strong></h4>
 <p>Retrieves the value of a slot <em>name</em>.</p>
-<div class="highlight"><pre tabindex="0" style="color:#d8dee9;background-color:#2e3440;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#88c0d0">setGeneric</span><span style="color:#eceff4">(</span><span style="color:#a3be8c">&#34;getName&#34;</span><span style="color:#eceff4">,</span> <span style="color:#88c0d0">function</span><span style="color:#eceff4">(</span>object<span style="color:#eceff4">)</span> <span style="color:#88c0d0">standardGeneric</span><span style="color:#eceff4">(</span><span style="color:#a3be8c">&#34;getName&#34;</span><span style="color:#eceff4">))</span>
-</span></span></code></pre></div><pre tabindex="0"><code>## [1] &#34;getName&#34;
-</code></pre><div class="highlight"><pre tabindex="0" style="color:#d8dee9;background-color:#2e3440;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#88c0d0">setMethod</span><span style="color:#eceff4">(</span><span style="color:#a3be8c">&#34;getName&#34;</span><span style="color:#eceff4">,</span> <span style="color:#a3be8c">&#34;Person&#34;</span><span style="color:#eceff4">,</span> <span style="color:#88c0d0">function</span><span style="color:#eceff4">(</span>object<span style="color:#eceff4">)</span> <span style="color:#eceff4">{</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#88c0d0">return</span><span style="color:#eceff4">(</span>object<span style="color:#81a1c1">@</span>name<span style="color:#eceff4">)</span>
-</span></span><span style="display:flex;"><span><span style="color:#eceff4">})</span>
-</span></span></code></pre></div><h4 id="mutator-setter"><strong>Mutator (Setter)</strong></h4>
+<pre class="r"><code>setGeneric(&quot;getName&quot;, function(object) standardGeneric(&quot;getName&quot;))</code></pre>
+<pre><code>## [1] &quot;getName&quot;</code></pre>
+<pre class="r"><code>setMethod(&quot;getName&quot;, &quot;Person&quot;, function(object) {
+    return(object@name)
+})</code></pre>
+</div>
+<div id="mutator-setter" class="section level4">
+<h4><strong>Mutator (Setter)</strong></h4>
 <p>Sets a new value for a slot.</p>
-<div class="highlight"><pre tabindex="0" style="color:#d8dee9;background-color:#2e3440;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#88c0d0">setGeneric</span><span style="color:#eceff4">(</span><span style="color:#a3be8c">&#34;setName&#34;</span><span style="color:#eceff4">,</span> <span style="color:#88c0d0">function</span><span style="color:#eceff4">(</span>object<span style="color:#eceff4">,</span> value<span style="color:#eceff4">)</span> <span style="color:#88c0d0">standardGeneric</span><span style="color:#eceff4">(</span><span style="color:#a3be8c">&#34;setName&#34;</span><span style="color:#eceff4">))</span>
-</span></span></code></pre></div><pre tabindex="0"><code>## [1] &#34;setName&#34;
-</code></pre><div class="highlight"><pre tabindex="0" style="color:#d8dee9;background-color:#2e3440;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#88c0d0">setMethod</span><span style="color:#eceff4">(</span><span style="color:#a3be8c">&#34;setName&#34;</span><span style="color:#eceff4">,</span> <span style="color:#a3be8c">&#34;Person&#34;</span><span style="color:#eceff4">,</span> <span style="color:#88c0d0">function</span><span style="color:#eceff4">(</span>object<span style="color:#eceff4">,</span> value<span style="color:#eceff4">)</span> <span style="color:#eceff4">{</span>
-</span></span><span style="display:flex;"><span>    object<span style="color:#81a1c1">@</span>name <span style="color:#81a1c1">&lt;-</span> value
-</span></span><span style="display:flex;"><span>    <span style="color:#88c0d0">return</span><span style="color:#eceff4">(</span>object<span style="color:#eceff4">)</span>
-</span></span><span style="display:flex;"><span><span style="color:#eceff4">})</span>
-</span></span></code></pre></div><p>Getters and setters, often referred to as accessors and mutators, are methods that are manually defined by the programmer. Their primary role is to control the access and modification of an object&rsquo;s internal data (slots in S4 terms).</p>
-<p>Here&rsquo;s why they are important:</p>
-<ul>
-<li>
-<p>Encapsulation: One of the primary principles of object-oriented programming is encapsulation, which refers to the bundling of data with the methods that operate on that data. Getters and setters allow for controlled access and modification, ensuring that the internal state of an object is always valid.</p>
-</li>
-<li>
-<p>Validation: By using setters, you can add checks to ensure that the data being set is valid. For example, if you have a slot for age, you can ensure that negative values aren&rsquo;t set.</p>
-</li>
-<li>
-<p>Derived Properties: Getters can be used to compute derived properties. For example, if you have a Person class with birthYear slot, you can have a getter for age that calculates the age based on the current year and the birth year.</p>
-</li>
-<li>
-<p>Abstraction: By using getters and setters, you can change the internal representation of a class without affecting the code that uses the class.</p>
-</li>
-</ul>
-<h2 id="advanced-method-dispatching">Advanced Method Dispatching</h2>
+<pre class="r"><code>setGeneric(&quot;setName&quot;, function(object, value) standardGeneric(&quot;setName&quot;))</code></pre>
+<pre><code>## [1] &quot;setName&quot;</code></pre>
+<pre class="r"><code>setMethod(&quot;setName&quot;, &quot;Person&quot;, function(object, value) {
+    object@name &lt;- value
+    return(object)
+})</code></pre>
+<p>Getters and setters, often referred to as accessors and mutators, are methods that are manually defined by the programmer. Their primary role is to control the access and modification of an object’s internal data (slots in S4 terms).</p>
+<p>Here’s why they are important:
+- <strong>Encapsulation</strong>: One of the primary principles of object-oriented programming is encapsulation, which refers to the bundling of data with the methods that operate on that data. Getters and setters allow for controlled access and modification, ensuring that the internal state of an object is always valid.
+- <strong>Validation</strong>: By using setters, you can add checks to ensure that the data being set is valid. For example, if you have a slot for age, you can ensure that negative values aren’t set.
+- <strong>Derived Properties</strong>: Getters can be used to compute derived properties. For example, if you have a Person class with birthYear slot, you can have a getter for age that calculates the age based on the current year and the birth year.
+- <strong>Abstraction</strong>: By using getters and setters, you can change the internal representation of a class without affecting the code that uses the class.</p>
+</div>
+</div>
+<div id="advanced-method-dispatching" class="section level2">
+<h2>Advanced Method Dispatching</h2>
 <p>In S4, methods can be dispatched based on multiple arguments (classes), not just on the class of a single object. This allows for defining methods that behave differently depending on the classes of all their arguments.</p>
+</div>
+</div>
 </div>
 
 
