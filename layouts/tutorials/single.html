@@ -41,34 +41,7 @@
   <h2>{{ .Title }}</h2>
 </div>
 
-
-<div class="single-content-container">
-  <div class="flex items-center mb-6">
-    <div class="meta-item text-gray-400">
-      <span class="meta-icon"><i class="fas fa-calendar-alt"></i></span>
-      <span class="text-md font-medium">Publication Date:</span> 
-      <span class="text-gray-500">{{ .Date.Format "2 January 2006" }}</span>
-    </div>
-    <div class="meta-item text-gray-400">
-      <span class="meta-icon"><i class="fas fa-clock"></i></span>
-      <span class="text-md font-medium">Reading Time:</span> 
-      <span class="text-gray-500">{{ .ReadingTime }} min</span>
-    </div>
-  </div>
-</div>
-
-
-<!-- Table of Contents -->
-<div class="single-content-container table-of-contents">
-  {{ .TableOfContents }}
-</div>
-
-<div class="single-content-container">
-
-    <!-- Article Content -->
-    <div class="content">
-        {{ .Content }}
-    </div>
+{{ partial "singe_page_header.html" . }}
 
     <!-- Tags -->
     <div class="tags">

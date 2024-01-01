@@ -36,12 +36,7 @@
   <h2>{{ .Title }}</h2>
 </div>
 
-{{ partial "singe_page_header.html" . }}
-
-<div class="single-content-container">
-  <!-- Article Content -->
-  <nav class="js-toc"></nav>
-  <div class="content js-toc-content">{{ .Content }}</div>
+{{ partial "singe_page_common.html" . }}
 
   <!-- Tags -->
   <div class="tags">
