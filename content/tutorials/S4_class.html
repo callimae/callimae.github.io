@@ -56,7 +56,7 @@ person</code></pre>
 ## 
 ## function (object) 
 ## standardGeneric(&quot;describe&quot;)
-## &lt;environment: 0x56080bcf67c8&gt;
+## &lt;environment: 0x55fa5b3701a0&gt;
 ## Methods may be defined for arguments: object
 ## Use  showMethods(describe)  for currently available ones.</code></pre>
 <p>From the executed code we can read that to check if there are any existing methods exists <code>showMethods(describe)</code> should be used. Let us do that:</p>
@@ -225,7 +225,7 @@ In S4, we use specific methods to get or set the values of slots:</p>
 })</code></pre>
 <p>Getters and setters, often referred to as accessors and mutators, are methods that are manually defined by the programmer. Their primary role is to control the access and modification of an object’s internal data (slots in S4 terms).</p>
 <p>Here’s why they are important:
-- <strong>Encapsulatio</strong>n: One of the primary principles of object-oriented programming is encapsulation, which refers to the bundling of data with the methods that operate on that data. Getters and setters allow for controlled access and modification, ensuring that the internal state of an object is always valid.
+- <strong>Encapsulation</strong>: One of the primary principles of object-oriented programming is encapsulation, which refers to the bundling of data with the methods that operate on that data. Getters and setters allow for controlled access and modification, ensuring that the internal state of an object is always valid.
 - <strong>Validation</strong>: By using setters, you can add checks to ensure that the data being set is valid. For example, if you have a slot for age, you can ensure that negative values aren’t set.
 - <strong>Derived Properties</strong>: Getters can be used to compute derived properties. For example, if you have a Person class with birthYear slot, you can have a getter for age that calculates the age based on the current year and the birth year.
 - <strong>Abstraction</strong>: By using getters and setters, you can change the internal representation of a class without affecting the code that uses the class.</p>
