@@ -300,63 +300,29 @@ document.addEventListener('DOMContentLoaded', (event) => {
   <h2>S4 Class</h2>
 </div>
 
-
 <div class="single-content-container">
   <div class="flex items-center mb-6">
     <div class="meta-item text-gray-400">
       <span class="meta-icon"><i class="fas fa-calendar-alt"></i></span>
-      <span class="text-md font-medium">Publication Date:</span> 
+      <span class="text-md font-medium">Publication Date:</span>
       <span class="text-gray-500">5 October 2023</span>
     </div>
     <div class="meta-item text-gray-400">
       <span class="meta-icon"><i class="fas fa-clock"></i></span>
-      <span class="text-md font-medium">Reading Time:</span> 
+      <span class="text-md font-medium">Reading Time:</span>
       <span class="text-gray-500">9 min</span>
     </div>
   </div>
 </div>
 
-
-
-<div class="single-content-container table-of-contents">
-  <nav id="TableOfContents">
-  <ul>
-    <li><a href="#s4-class">S4 Class</a>
-      <ul>
-        <li><a href="#introduction">Introduction</a></li>
-        <li><a href="#aplications">Aplications</a></li>
-        <li><a href="#basic-s4-class">Basic S4 class</a></li>
-        <li><a href="#class-initialization---create-object">Class initialization - create object</a></li>
-        <li><a href="#generic-function">Generic function</a></li>
-        <li><a href="#methods">Methods</a></li>
-        <li><a href="#inheritance">Inheritance</a>
-          <ul>
-            <li><a href="#crafting-the-derived-class">Crafting the Derived Class</a></li>
-            <li><a href="#methods-without-a-generic-not-possible">Methods without a Generic? Not Possible!</a></li>
-          </ul>
-        </li>
-        <li><a href="#accessors-and-mutators-in-s4">Accessors and Mutators in S4</a>
-          <ul>
-            <li>
-              <ul>
-                <li><a href="#accessor-getter"><strong>Accessor (Getter)</strong></a></li>
-                <li><a href="#mutator-setter"><strong>Mutator (Setter)</strong></a></li>
-              </ul>
-            </li>
-          </ul>
-        </li>
-        <li><a href="#advanced-method-dispatching">Advanced Method Dispatching</a></li>
-      </ul>
-    </li>
-  </ul>
+<nav id="toc" class="toc-sidebar">
+  
 </nav>
-</div>
 
 <div class="single-content-container">
-
-    
-    <div class="content">
-        <h1 id="s4-class">S4 Class</h1>
+  
+  <nav class="js-toc"></nav>
+  <div class="content js-toc-content"><h1 id="s4-class">S4 Class</h1>
 <h2 id="introduction">Introduction</h2>
 <p>When tackling specific programming challenges, we often look for the right tools to aid our solutions. Much like in the physical world where we might reach for a hammer, pliers, or tweezers depending on the task at hand, in the realm of R programming, the S4 class can be that precise tool. At times, it even resembles a Swiss army knife in its versatility. The S4 class is a mature aspect of the R environment, widely employed, particularly in bioinformatics. While it might not offer the flexibility of R6, its well-structured, organized, and elegant design makes it a go-to choice for many.</p>
 <h2 id="aplications">Aplications</h2>
@@ -562,8 +528,8 @@ In S4, we use specific methods to get or set the values of slots:</p>
 </ul>
 <h2 id="advanced-method-dispatching">Advanced Method Dispatching</h2>
 <p>In S4, methods can be dispatched based on multiple arguments (classes), not just on the class of a single object. This allows for defining methods that behave differently depending on the classes of all their arguments.</p>
+</div>
 
-    </div>
 
     
     <div class="tags">
