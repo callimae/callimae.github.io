@@ -34,7 +34,7 @@
 body {
     margin: 0;
     padding: 0;
-    max-width: 60vw;
+    max-width: 65vw;
     margin: 0 auto;
     padding: 0 0px;
     font-family: 'Roboto', sans-serif;
@@ -175,7 +175,7 @@ body.night-mode .about-section-container {
 /* Dla ekranów szerszych niż 1200px */
 @media (min-width: 1200px) {
     .toc-sidebar {
-        width: 30vw;
+        width: 17.5vw;
         /* Szerokość dla dużych ekranów */
         top: 100px;
         left: 0;
@@ -185,7 +185,7 @@ body.night-mode .about-section-container {
 /* Dla ekranów średnich, od 768px do 1199px */
 @media (min-width: 768px) and (max-width: 1199px) {
     .toc-sidebar {
-        width: 25vw;
+        width: 12vw;
         /* Większa szerokość dla średnich ekranów */
         top: 80px;
         left: 0;
@@ -195,7 +195,7 @@ body.night-mode .about-section-container {
 /* Dla ekranów mniejszych niż 767px */
 @media (max-width: 767px) {
     .toc-sidebar {
-        width: 20vw;
+        width: 10vw;
         /* Jeszcze większa szerokość dla małych ekranów */
         top: 60px;
         position: relative;
