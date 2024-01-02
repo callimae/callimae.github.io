@@ -6,6 +6,7 @@
     /* Opcjonalnie, jeśli chcesz zaokrąglone rogi. */
     margin: 20px 0;
     text-align: justify;
+    z-index: 1;
     /* Odstępy, żeby kontener nie przylegał bezpośrednio do krawędzi strony. */
 }
 
