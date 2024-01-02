@@ -11,8 +11,6 @@ output: html_document
 
 
 
-# S4 Class
-
 ## Introduction
 
 When tackling specific programming challenges, we often look for the right tools to aid our solutions. Much like in the physical world where we might reach for a hammer, pliers, or tweezers depending on the task at hand, in the realm of R programming, the S4 class can be that precise tool. At times, it even resembles a Swiss army knife in its versatility. The S4 class is a mature aspect of the R environment, widely employed, particularly in bioinformatics. While it might not offer the flexibility of R6, its well-structured, organized, and elegant design makes it a go-to choice for many.
@@ -79,7 +77,7 @@ describe
 ## 
 ## function (object) 
 ## standardGeneric("describe")
-## <environment: 0x55f04c06b8a0>
+## <environment: 0x55d7eb449db0>
 ## Methods may be defined for arguments: object
 ## Use  showMethods(describe)  for currently available ones.
 ```
