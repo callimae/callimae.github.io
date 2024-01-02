@@ -75,31 +75,31 @@ code, pre {
 */
 
 .single-content-container h1 {
-    font-size: 4rem;
+    font-size: 3.75rem;
 }
 
 .single-content-container h2 {
-    font-size: 3.5rem;
-}
-
-.single-content-container h3 {
     font-size: 3.25rem;
 }
 
-.single-content-container h4 {
-    font-size: 3.0rem;
+.single-content-container h3 {
+    font-size: 3rem;
 }
 
-.single-content-container h5 {
+.single-content-container h4 {
     font-size: 2.75rem;
 }
 
-.single-content-container h6 {
+.single-content-container h5 {
     font-size: 2.5rem;
+}
+
+.single-content-container h6 {
+    font-size: 2.25rem;
     font-weight: normal; /* A lighter weight for the smallest header for stylistic variety */
 }
 
 .single-content-container p {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     font-weight: normal; /* A lighter weight for the smallest header for stylistic variety */
 }
