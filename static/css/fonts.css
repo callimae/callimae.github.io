@@ -1,18 +1,3 @@
-@font-face {
-    font-family: 'Signika';
-    src: url('/fonts/Signika-Regular.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-}
-/* Jeśli masz inne warianty czcionki, możesz je również zdefiniować tutaj, na przykład: */
-
-@font-face {
-    font-family: 'Signika';
-    src: url('/fonts/Signika-Bold.ttf') format('truetype');
-    font-weight: bold;
-    font-style: normal;
-}
-
 .text-spring {
     color: MediumSpringGreen;
 }
