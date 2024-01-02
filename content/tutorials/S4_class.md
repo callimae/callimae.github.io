@@ -79,7 +79,7 @@ describe
 ## 
 ## function (object) 
 ## standardGeneric("describe")
-## <environment: 0x56117952bcc8>
+## <environment: 0x5629ed8588a0>
 ## Methods may be defined for arguments: object
 ## Use  showMethods(describe)  for currently available ones.
 ```
@@ -356,12 +356,16 @@ setMethod("setName", "Person", function(object, value) {
 ```
 
 Getters and setters, often referred to as accessors and mutators, are methods that are manually defined by the programmer. Their primary role is to control the access and modification of an object's internal data (slots in S4 terms).
-aaa
+
 Here's why they are important:
-- **Encapsulation**: One of the primary principles of object-oriented programming is encapsulation, which refers to the bundling of data with the methods that operate on that data. Getters and setters allow for controlled access and modification, ensuring that the internal state of an object is always valid.
-- **Validation**: By using setters, you can add checks to ensure that the data being set is valid. For example, if you have a slot for age, you can ensure that negative values aren't set.
-- **Derived Properties**: Getters can be used to compute derived properties. For example, if you have a Person class with birthYear slot, you can have a getter for age that calculates the age based on the current year and the birth year.
-- **Abstraction**: By using getters and setters, you can change the internal representation of a class without affecting the code that uses the class.
+
+**Encapsulation**: One of the primary principles of object-oriented programming is encapsulation, which refers to the bundling of data with the methods that operate on that data. Getters and setters allow for controlled access and modification, ensuring that the internal state of an object is always valid.
+
+**Validation**: By using setters, you can add checks to ensure that the data being set is valid. For example, if you have a slot for age, you can ensure that negative values aren't set.
+
+**Derived Properties**: Getters can be used to compute derived properties. For example, if you have a Person class with birthYear slot, you can have a getter for age that calculates the age based on the current year and the birth year.
+
+**Abstraction**: By using getters and setters, you can change the internal representation of a class without affecting the code that uses the class.
 
 
 ## Advanced Method Dispatching

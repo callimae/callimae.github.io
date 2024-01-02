@@ -356,7 +356,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
 ## 
 ## function (object) 
 ## standardGeneric(&#34;describe&#34;)
-## &lt;environment: 0x56117952bcc8&gt;
+## &lt;environment: 0x5629ed8588a0&gt;
 ## Methods may be defined for arguments: object
 ## Use  showMethods(describe)  for currently available ones.
 </code></pre><p>From the executed code we can read that to check if there are any existing methods exists <code>showMethods(describe)</code> should be used. Let us do that:</p>
@@ -510,15 +510,12 @@ In S4, we use specific methods to get or set the values of slots:</p>
 </span></span><span style="display:flex;"><span>    object<span style="color:#81a1c1">@</span>name <span style="color:#81a1c1">&lt;-</span> value
 </span></span><span style="display:flex;"><span>    <span style="color:#88c0d0">return</span><span style="color:#eceff4">(</span>object<span style="color:#eceff4">)</span>
 </span></span><span style="display:flex;"><span><span style="color:#eceff4">})</span>
-</span></span></code></pre></div><p>Getters and setters, often referred to as accessors and mutators, are methods that are manually defined by the programmer. Their primary role is to control the access and modification of an object&rsquo;s internal data (slots in S4 terms).
-aaa
-Here&rsquo;s why they are important:</p>
-<ul>
-<li><strong>Encapsulation</strong>: One of the primary principles of object-oriented programming is encapsulation, which refers to the bundling of data with the methods that operate on that data. Getters and setters allow for controlled access and modification, ensuring that the internal state of an object is always valid.</li>
-<li><strong>Validation</strong>: By using setters, you can add checks to ensure that the data being set is valid. For example, if you have a slot for age, you can ensure that negative values aren&rsquo;t set.</li>
-<li><strong>Derived Properties</strong>: Getters can be used to compute derived properties. For example, if you have a Person class with birthYear slot, you can have a getter for age that calculates the age based on the current year and the birth year.</li>
-<li><strong>Abstraction</strong>: By using getters and setters, you can change the internal representation of a class without affecting the code that uses the class.</li>
-</ul>
+</span></span></code></pre></div><p>Getters and setters, often referred to as accessors and mutators, are methods that are manually defined by the programmer. Their primary role is to control the access and modification of an object&rsquo;s internal data (slots in S4 terms).</p>
+<p>Here&rsquo;s why they are important:</p>
+<p><strong>Encapsulation</strong>: One of the primary principles of object-oriented programming is encapsulation, which refers to the bundling of data with the methods that operate on that data. Getters and setters allow for controlled access and modification, ensuring that the internal state of an object is always valid.</p>
+<p><strong>Validation</strong>: By using setters, you can add checks to ensure that the data being set is valid. For example, if you have a slot for age, you can ensure that negative values aren&rsquo;t set.</p>
+<p><strong>Derived Properties</strong>: Getters can be used to compute derived properties. For example, if you have a Person class with birthYear slot, you can have a getter for age that calculates the age based on the current year and the birth year.</p>
+<p><strong>Abstraction</strong>: By using getters and setters, you can change the internal representation of a class without affecting the code that uses the class.</p>
 <h2 id="advanced-method-dispatching">Advanced Method Dispatching</h2>
 <p>In S4, methods can be dispatched based on multiple arguments (classes), not just on the class of a single object. This allows for defining methods that behave differently depending on the classes of all their arguments.</p>
 </div>
