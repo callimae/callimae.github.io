@@ -79,7 +79,7 @@ describe
 ## 
 ## function (object) 
 ## standardGeneric("describe")
-## <environment: 0x5629ed8588a0>
+## <environment: 0x560179e138a0>
 ## Methods may be defined for arguments: object
 ## Use  showMethods(describe)  for currently available ones.
 ```
