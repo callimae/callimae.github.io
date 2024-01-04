@@ -27,21 +27,21 @@ h3 {
 }
 
 h4 {
-    font-size: 3.25rem;
-}
-
-h5 {
     font-size: 3rem;
 }
 
+h5 {
+    font-size: 2.5rem;
+}
+
 h6 {
-    font-size: 2.75rem;
+    font-size: 2rem;
     font-weight: normal;
 }
 
 /* Style dla paragrafów */
 p {
-    font-size: 2rem;
+    font-size: 1.5rem;
     margin-bottom: 0em;
 }
 
@@ -75,27 +75,27 @@ code, pre {
 */
 
 .single-content-container h1 {
-    font-size: 3.75rem;
+    font-size: 3.5rem;
 }
 
 .single-content-container h2 {
-    font-size: 3.25rem;
-}
-
-.single-content-container h3 {
     font-size: 3rem;
 }
 
-.single-content-container h4 {
+.single-content-container h3 {
     font-size: 2.75rem;
 }
 
-.single-content-container h5 {
+.single-content-container h4 {
     font-size: 2.5rem;
 }
 
-.single-content-container h6 {
+.single-content-container h5 {
     font-size: 2.25rem;
+}
+
+.single-content-container h6 {
+    font-size: 2rem;
     font-weight: normal; /* A lighter weight for the smallest header for stylistic variety */
 }
 

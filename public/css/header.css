@@ -8,7 +8,6 @@
     z-index: 1000; /* Upewnia się, że nagłówek jest zawsze na wierzchu */
 }
 
-
 .nav-link {
     transition: transform 0.3s ease;
     display: inline-block;
@@ -133,3 +132,13 @@ li:hover #dropdownContent {
 header {
     position: relative; /* jeśli już nie masz tego ustawienia */
 }
+
+#progress-bar {
+    position: fixed;
+    top: 9.5vh;
+    left: 0;
+    width: 0;
+    height: 5px;
+    background-color: #ff7e57;
+    z-index: 9999;
+} 

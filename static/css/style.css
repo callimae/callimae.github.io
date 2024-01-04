@@ -161,7 +161,8 @@ body.night-mode .about-section-container {
     /* Dodanie wewnętrznego marginesu do kontenera */
 }
 
-/* Stylizacja spisu treści */
+
+/* Stylizacja spisu treści #65ff57 */
 .toc-sidebar {
     position: fixed;
     top: 100px;

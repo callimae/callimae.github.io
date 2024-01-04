@@ -19,10 +19,8 @@ pre[tabindex="0"] {
     border-radius: 10px;
     background-color: #2e3440; /* Wybierz kolor tła według swoich preferencji */
 }
-.day-mode .single-content-container {
-    background-color: #cacaca2a;
-}
 
+.day-mode .single-content-container,
 .night-mode .single-content-container {
-    background-color: #3e465ead;
+    background-color: #cacaca2a;
 }

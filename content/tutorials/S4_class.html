@@ -12,8 +12,6 @@ output: html_document
 
 </div>
 
-<div id="s4-class" class="section level1">
-<h1>S4 Class</h1>
 <div id="introduction" class="section level2">
 <h2>Introduction</h2>
 <p>When tackling specific programming challenges, we often look for the right tools to aid our solutions. Much like in the physical world where we might reach for a hammer, pliers, or tweezers depending on the task at hand, in the realm of R programming, the S4 class can be that precise tool. At times, it even resembles a Swiss army knife in its versatility. The S4 class is a mature aspect of the R environment, widely employed, particularly in bioinformatics. While it might not offer the flexibility of R6, its well-structured, organized, and elegant design makes it a go-to choice for many.</p>
@@ -56,7 +54,7 @@ person</code></pre>
 ## 
 ## function (object) 
 ## standardGeneric(&quot;describe&quot;)
-## &lt;environment: 0x55a137d581a0&gt;
+## &lt;environment: 0x557449e45f90&gt;
 ## Methods may be defined for arguments: object
 ## Use  showMethods(describe)  for currently available ones.</code></pre>
 <p>From the executed code we can read that to check if there are any existing methods exists <code>showMethods(describe)</code> should be used. Let us do that:</p>
@@ -225,16 +223,13 @@ In S4, we use specific methods to get or set the values of slots:</p>
 })</code></pre>
 <p>Getters and setters, often referred to as accessors and mutators, are methods that are manually defined by the programmer. Their primary role is to control the access and modification of an object’s internal data (slots in S4 terms).</p>
 <p>Here’s why they are important:</p>
-<ul>
-<li><strong>Encapsulation</strong>: One of the primary principles of object-oriented programming is encapsulation, which refers to the bundling of data with the methods that operate on that data. Getters and setters allow for controlled access and modification, ensuring that the internal state of an object is always valid.</li>
-<li><strong>Validation</strong>: By using setters, you can add checks to ensure that the data being set is valid. For example, if you have a slot for age, you can ensure that negative values aren’t set.</li>
-<li><strong>Derived Properties</strong>: Getters can be used to compute derived properties. For example, if you have a Person class with birthYear slot, you can have a getter for age that calculates the age based on the current year and the birth year.</li>
-<li><strong>Abstraction</strong>: By using getters and setters, you can change the internal representation of a class without affecting the code that uses the class.</li>
-</ul>
+<p><strong>Encapsulation</strong>: One of the primary principles of object-oriented programming is encapsulation, which refers to the bundling of data with the methods that operate on that data. Getters and setters allow for controlled access and modification, ensuring that the internal state of an object is always valid.</p>
+<p><strong>Validation</strong>: By using setters, you can add checks to ensure that the data being set is valid. For example, if you have a slot for age, you can ensure that negative values aren’t set.</p>
+<p><strong>Derived Properties</strong>: Getters can be used to compute derived properties. For example, if you have a Person class with birthYear slot, you can have a getter for age that calculates the age based on the current year and the birth year.</p>
+<p><strong>Abstraction</strong>: By using getters and setters, you can change the internal representation of a class without affecting the code that uses the class.</p>
 </div>
 </div>
 <div id="advanced-method-dispatching" class="section level2">
 <h2>Advanced Method Dispatching</h2>
 <p>In S4, methods can be dispatched based on multiple arguments (classes), not just on the class of a single object. This allows for defining methods that behave differently depending on the classes of all their arguments.</p>
-</div>
 </div>
