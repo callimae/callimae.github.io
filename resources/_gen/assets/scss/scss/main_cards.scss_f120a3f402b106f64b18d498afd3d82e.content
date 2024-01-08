@@ -130,7 +130,7 @@
   background-size: 300% 300%; }
 
 .tutorials-card.gradient-border:after {
-  background: linear-gradient(135deg, #00ffbf, #65faff, #00ff95);
+  background: linear-gradient(135deg, #00ff55, #65ffa5, #00ff55);
   content: '';
   position: absolute;
   top: calc(-1 * var(--borderWidth));
@@ -194,7 +194,7 @@
 .tutorials-card:hover .icon {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  background: linear-gradient(135deg, #00ffbf, #65faff, #00ff95);
+  background: linear-gradient(135deg, #00ff55, #65ffa5, #00ff55);
   opacity: 1;
   transition: all 0.3s ease; }
 
