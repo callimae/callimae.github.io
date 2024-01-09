@@ -135,7 +135,7 @@ header {
 
 #progress-bar {
     position: fixed;
-    top: 9.5vh;
+    top: 9vh;
     left: 0;
     width: 0;
     height: 5px;
