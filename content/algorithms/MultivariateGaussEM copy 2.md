@@ -45,3 +45,23 @@ Możesz używać LaTex do formatowania matematyki.
 a & = b + c \\
 d & = e + f + g
 \end{align*}
+
+{{< info >}}
+To jest informacyjna wiadomość.
+To jest informacyjna wiadomość. To jest informacyjna wiadomość. To jest informacyjna wiadomość.To jest informacyjna wiadomość.To jest informacyjna wiadomość.
+{{< /info >}}
+
+{{< warning >}}
+To jest ostrzegawcza wiadomość.
+To jest ostrzegawcza wiadomość. To jest ostrzegawcza wiadomość. To jest ostrzegawcza wiadomość.To jest ostrzegawcza wiadomość.To jest ostrzegawcza wiadomość.
+{{< /warning >}}
+
+{{< tip >}}
+To jest radząca wiadomość.
+To jest radząca wiadomość. To jest radząca wiadomość. To jest radząca wiadomość.To jest informacyjna wiadomość.To jest radząca wiadomość.
+{{< /tip >}}
+
+{{< bestpractices >}}
+To jest radząca wiadomość.
+To jest radząca wiadomość. To jest radząca wiadomość. To jest radząca wiadomość.To jest informacyjna wiadomość.To jest radząca wiadomość.
+{{< /bestpractices >}}

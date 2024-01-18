@@ -14,10 +14,13 @@
     margin-top: 15px; /* Zwiększa odstęp powyżej bloku kodu */
     margin-bottom: 15px; /* Zwiększa odstęp poniżej bloku kodu */
 }
+
 pre[tabindex="0"] {
     padding: 20px;
     border-radius: 10px;
-    background-color: #2e3440; /* Wybierz kolor tła według swoich preferencji */
+    background-color: #2e344094; /* Wybierz kolor tła według swoich preferencji */
+    color: #fff;
+    overflow: auto; 
 }
 
 .day-mode .single-content-container,
