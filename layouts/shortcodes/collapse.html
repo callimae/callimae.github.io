@@ -1,0 +1,10 @@
+<!-- layouts/shortcodes/collapse.html -->
+<div class="collapse-container {{ .Get 1 }}">
+    <button class="collapse-button" onclick="toggleCollapse(this)">
+        <i class="fas fa-chevron-down"></i>
+        <span>{{ .Get 0 }}</span>
+    </button>
+    <div class="collapse-content" style="display:none;">
+        {{ .Inner }}
+    </div>
+</div>

@@ -20,6 +20,14 @@
     transition: max-height 0.2s ease-out;
 }
 
+.collapse-container.explanation .collapse-button {
+    background-color: #cef8ce; /* jasnozielony dla wyjaśnień */
+}
+
+.collapse-container.exercise .collapse-button {
+    background-color: #f8cece; /* jasnoczerwony dla ćwiczeń */
+}
+
     /* Single page: info, warning, tip */
 .info-box {
     margin-top: 10px;

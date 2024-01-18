@@ -65,3 +65,11 @@ To jest radząca wiadomość. To jest radząca wiadomość. To jest radząca wia
 To jest radząca wiadomość.
 To jest radząca wiadomość. To jest radząca wiadomość. To jest radząca wiadomość.To jest informacyjna wiadomość.To jest radząca wiadomość.
 {{< /bestpractices >}}
+
+{{< collapse "Wyjaśnienie" "explanation" >}}
+Treść wyjaśnienia...
+{{< /collapse >}}
+
+{{< collapse "Ćwiczenie" "exercise" >}}
+Treść ćwiczenia...
+{{< /collapse >}}

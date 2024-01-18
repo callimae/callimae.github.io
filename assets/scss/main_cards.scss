@@ -157,8 +157,6 @@ $aboutColors: (start: rgb(49, 49, 49), mid:rgb(129, 129, 129), end: rgba(59, 59,
 @include card-hover-gradient('.algorithms-card', $algorithmsColors);
 @include card-hover-gradient('.about-card', $aboutColors);
 
-
-
 .courses-card .icon {
     background: black;
 }
