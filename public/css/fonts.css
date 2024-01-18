@@ -1,0 +1,105 @@
+.text-spring {
+    color: MediumSpringGreen;
+}
+
+.text-yellow {
+    color: yellow;
+}
+
+.text-aqua {
+    color: aqua;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: bold;
+}
+
+h1 {
+    font-size: 5rem;
+}
+
+h2 {
+    font-size: 4rem;
+}
+
+h3 {
+    font-size: 3.5rem;
+}
+
+h4 {
+    font-size: 3rem;
+}
+
+h5 {
+    font-size: 2.5rem;
+}
+
+h6 {
+    font-size: 2rem;
+    font-weight: normal;
+}
+
+/* Style dla paragrafów */
+p {
+    font-size: 1.5rem;
+    margin-bottom: 0em;
+}
+
+/* Styl dla bloków kodu */
+code, pre {
+    font-family: 'Fira Code', monospace;
+    font-variant-ligatures: contextual;
+    font-feature-settings: "calt" 1;
+}
+
+/* Modyfikacje tekstu */
+.small-caps {
+    font-variant: small-caps;
+}
+
+/* Styling headers within the .content-container class */
+
+/* Apply bold font weight to all headers within the .content-container class.
+   By prefixing the header tags (h1, h2, etc.) with .content-container, 
+   we ensure that the styles are applied only to headers inside elements 
+   with the .content-container class. This avoids globally modifying the 
+   appearance of headers throughout the site.
+*/
+.single-content-container h1, .single-content-container h2, .single-content-container h3, .single-content-container h4, .single-content-container h5, .single-content-container h6 {
+    font-weight: bold;
+}
+
+/* Now, we define font sizes for each header type within .content-container.
+   Starting with h1 at 3rem, and scaling down for subsequent headers to 
+   maintain a clear hierarchy.
+*/
+
+.single-content-container h1 {
+    font-size: 3.5rem;
+}
+
+.single-content-container h2 {
+    font-size: 3rem;
+}
+
+.single-content-container h3 {
+    font-size: 2.75rem;
+}
+
+.single-content-container h4 {
+    font-size: 2.5rem;
+}
+
+.single-content-container h5 {
+    font-size: 2.25rem;
+}
+
+.single-content-container h6 {
+    font-size: 2rem;
+    font-weight: normal; /* A lighter weight for the smallest header for stylistic variety */
+}
+
+.single-content-container p {
+    font-size: 1.4rem;
+    font-weight: normal; /* A lighter weight for the smallest header for stylistic variety */
+}

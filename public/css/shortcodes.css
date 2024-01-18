@@ -1,0 +1,82 @@
+.collapse-container .collapse-button {
+    background-color: #f8f9fa;
+    border: none;
+    text-align: left;
+    width: 100%;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background-color 0.3s;
+}
+
+.collapse-container .collapse-button:hover {
+    background-color: #e2e6ea;
+}
+
+.collapse-container .collapse-content {
+    padding: 0 18px;
+    display: none;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+}
+
+    /* Single page: info, warning, tip */
+.info-box {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 15px;
+    border: 5px solid #00448d; /* Zmieniono kolor obramowania na ciemniejszy niebieski */
+    border-radius: 12px;
+    background-color: rgba(1, 84, 173, 0.25);
+}
+
+.warning-box {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 15px;
+    border: 5px solid #7c0000; /* Zmieniono kolor obramowania na ciemniejszy niebieski */
+    border-radius: 12px;
+    background-color: rgba(134, 0, 0, 0.25);
+}
+
+.tip-box {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 15px;
+    border: 5px solid #d8d400; /* Zmieniono kolor obramowania na ciemniejszy niebieski */
+    border-radius: 12px;
+    background-color: rgba(255, 251, 0, 0.250);
+}
+
+.bestpractices-box {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 15px;
+    border: 5px solid #1be600; /* Zmieniono kolor obramowania na ciemniejszy niebieski */
+    border-radius: 12px;
+    background-color: hsla(113, 100%, 45%, 0.25);
+}
+
+.info-box i {
+    margin-right: 10px;
+    font-size: 1.2em; /* Dostosuj rozmiar ikony */
+    color:#0154ad;
+}
+
+.warning-box i {
+    margin-right: 10px;
+    font-size: 1.2em; /* Dostosuj rozmiar ikony */
+    color:#c20000;
+}
+
+.tip-box i {
+    margin-right: 10px;
+    font-size: 1.2em; /* Dostosuj rozmiar ikony */
+    color:#fffb00;
+}
+
+.bestpractices-box i {
+    margin-right: 10px;
+    font-size: 1.2em; /* Dostosuj rozmiar ikony */
+    color:#1be600;
+}

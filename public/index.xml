@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>R-stuff</title>
+    <link>//callimae.github.io/</link>
+    <description>Recent content on R-stuff</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 05 Oct 2023 00:00:00 +0000</lastBuildDate><atom:link href="//callimae.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>S4 Class</title>
+      <link>//callimae.github.io/tutorials/s4_class/</link>
+      <pubDate>Thu, 05 Oct 2023 00:00:00 +0000</pubDate>
+      
+      <guid>//callimae.github.io/tutorials/s4_class/</guid>
+      <description>Introduction When tackling specific programming challenges, we often look for the right tools to aid our solutions. Much like in the physical world where we might reach for a hammer, pliers, or tweezers depending on the task at hand, in the realm of R programming, the S4 class can be that precise tool. At times, it even resembles a Swiss army knife in its versatility. The S4 class is a mature aspect of the R environment, widely employed, particularly in bioinformatics.</description>
+    </item>
+    
+    <item>
+      <title>Mateusz Kania</title>
+      <link>//callimae.github.io/authors/mateusz_kania/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>//callimae.github.io/authors/mateusz_kania/</guid>
+      <description>Treść dodatkowa o autorze, jeśli jest to konieczne.</description>
+    </item>
+    
+    <item>
+      <title>Minimum value</title>
+      <link>//callimae.github.io/algorithms/sorting/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>//callimae.github.io/algorithms/sorting/</guid>
+      <description>Twoja zawartość&amp;hellip;</description>
+    </item>
+    
+    <item>
+      <title>Multivariate Gauss EM</title>
+      <link>//callimae.github.io/algorithms/multivariategaussem-copy-2/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>//callimae.github.io/algorithms/multivariategaussem-copy-2/</guid>
+      <description>Witaj w Markdown! Markdown to lekki język znaczników, który można używać do dodawania formatowania do dokumentu tekstowego.
+Nagłówki Użyj # dla największych nagłówków, ## dla mniejszych, ### jeszcze mniejszych, a #### dla najmniejszych.
+Nagłówek 1 Nagłówek 2 Nagłówek 3 Nagłówek 4 Tabele Tabele są prostym sposobem na organizowanie informacji.
+Nazwa Wiek Miasto Alice 24 Warszawa Bob 30 Kraków Charlie 27 Poznań Kod Użyj pojedynczego akapitu ` dla małego fragmentu kodu i ``` dla bloku kodu.</description>
+    </item>
+    
+    <item>
+      <title>Multivariate Gauss EM</title>
+      <link>//callimae.github.io/algorithms/multivariategaussem-copy/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>//callimae.github.io/algorithms/multivariategaussem-copy/</guid>
+      <description>Content about sorting algorithms.</description>
+    </item>
+    
+    <item>
+      <title>Multivariate Gauss EM</title>
+      <link>//callimae.github.io/algorithms/multivariategaussem/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>//callimae.github.io/algorithms/multivariategaussem/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Multivariate Gauss2 EM</title>
+      <link>//callimae.github.io/algorithms/multivariategaussem-copy-4/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>//callimae.github.io/algorithms/multivariategaussem-copy-4/</guid>
+      <description>Witaj w Markdown! Markdown to lekki język znaczników, który można używać do dodawania formatowania do dokumentu tekstowego.
+Nagłówki Użyj # dla największych nagłówków, ## dla mniejszych, ### jeszcze mniejszych, a #### dla najmniejszych.
+Nagłówek 1 Nagłówek 2 Nagłówek 3 Nagłówek 4 Tabele Tabele są prostym sposobem na organizowanie informacji.
+Nazwa Wiek Miasto Alice 24 Warszawa Bob 30 Kraków Charlie 27 Poznań Kod Użyj pojedynczego akapitu ` dla małego fragmentu kodu i ``` dla bloku kodu.</description>
+    </item>
+    
+    <item>
+      <title>Multivariate Gauss5 EM</title>
+      <link>//callimae.github.io/algorithms/multivariategaussem-copy-3/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>//callimae.github.io/algorithms/multivariategaussem-copy-3/</guid>
+      <description>Witaj w Markdown! Markdown to lekki język znaczników, który można używać do dodawania formatowania do dokumentu tekstowego.
+Nagłówki Użyj # dla największych nagłówków, ## dla mniejszych, ### jeszcze mniejszych, a #### dla najmniejszych.
+Nagłówek 1 Nagłówek 2 Nagłówek 3 Nagłówek 4 Tabele Tabele są prostym sposobem na organizowanie informacji.
+Nazwa Wiek Miasto Alice 24 Warszawa Bob 30 Kraków Charlie 27 Poznań Kod Użyj pojedynczego akapitu ` dla małego fragmentu kodu i ``` dla bloku kodu.</description>
+    </item>
+    
+    <item>
+      <title>Multivariate Gauss6 EM</title>
+      <link>//callimae.github.io/algorithms/multivariategaussem-copy-5/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>//callimae.github.io/algorithms/multivariategaussem-copy-5/</guid>
+      <description>Witaj w Markdown! Markdown to lekki język znaczników, który można używać do dodawania formatowania do dokumentu tekstowego.
+Nagłówki Użyj # dla największych nagłówków, ## dla mniejszych, ### jeszcze mniejszych, a #### dla najmniejszych.
+Nagłówek 1 Nagłówek 2 Nagłówek 3 Nagłówek 4 Tabele Tabele są prostym sposobem na organizowanie informacji.
+Nazwa Wiek Miasto Alice 24 Warszawa Bob 30 Kraków Charlie 27 Poznań Kod Użyj pojedynczego akapitu ` dla małego fragmentu kodu i ``` dla bloku kodu.</description>
+    </item>
+    
+    <item>
+      <title>Univariate Gauss EM</title>
+      <link>//callimae.github.io/algorithms/univariategaussem/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>//callimae.github.io/algorithms/univariategaussem/</guid>
+      <description>Content about sorting algorithms.</description>
+    </item>
+    
+  </channel>
+</rss>
