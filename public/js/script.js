@@ -43,3 +43,14 @@ tocbot.init({
   // For headings inside relative or absolute positioned containers within content.
   hasInnerContainers: true,
 });
+
+function toggleCollapse(element) {
+  var content = element.nextElementSibling;
+  if (content.style.display === "none") {
+      content.style.display = "block";
+      element.firstChild.className = "fas fa-chevron-up";
+  } else {
+      content.style.display = "none";
+      element.firstChild.className = "fas fa-chevron-down";
+  }
+}

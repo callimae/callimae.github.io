@@ -1,5 +1,4 @@
 .collapse-container .collapse-button {
-    background-color: #f8f9fa;
     border: none;
     text-align: left;
     width: 100%;
@@ -7,6 +6,9 @@
     cursor: pointer;
     font-size: 18px;
     transition: background-color 0.3s;
+    border-radius: 12px;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 .collapse-container .collapse-button:hover {
@@ -18,6 +20,16 @@
     display: none;
     overflow: hidden;
     transition: max-height 0.2s ease-out;
+}
+
+.collapse-container.explanation .collapse-button {
+    background-color:rgba(0, 176, 189, 0.5);  /* jasnozielony dla wyjaśnień */
+    border: 5px solid rgb(0, 176, 189); /* Zmieniono kolor obramowania na ciemniejszy niebieski */
+}
+
+.collapse-container.exercise .collapse-button {
+    background-color: rgba(212, 0, 255, 0.5);/* jasnoczerwony dla ćwiczeń */
+    border: 5px solid rgba(212, 0, 255); /* Zmieniono kolor obramowania na ciemniejszy niebieski */
 }
 
     /* Single page: info, warning, tip */
