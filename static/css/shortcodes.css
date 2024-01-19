@@ -23,72 +23,72 @@
 }
 
 .collapse-container.explanation .collapse-button {
-    background-color:rgba(0, 176, 189, 0.5);  /* jasnozielony dla wyjaśnień */
-    border: 5px solid rgb(0, 176, 189); /* Zmieniono kolor obramowania na ciemniejszy niebieski */
+    background-color: rgba(0, 176, 189, 0.5);
+    /* jasnozielony dla wyjaśnień */
+    border: 5px solid rgb(0, 176, 189);
+    /* Zmieniono kolor obramowania na ciemniejszy niebieski */
 }
 
 .collapse-container.exercise .collapse-button {
-    background-color: rgba(212, 0, 255, 0.5);/* jasnoczerwony dla ćwiczeń */
-    border: 5px solid rgba(212, 0, 255); /* Zmieniono kolor obramowania na ciemniejszy niebieski */
+    background-color: rgba(212, 0, 255, 0.5);
+    /* jasnoczerwony dla ćwiczeń */
+    border: 5px solid rgba(212, 0, 255);
+    /* Zmieniono kolor obramowania na ciemniejszy niebieski */
 }
 
-    /* Single page: info, warning, tip */
-.info-box {
+/* Single page: info, warning, tip */
+.info-box .warning-box .tip-box .bestpractices-box {
+    display: flex;
     margin-top: 10px;
     margin-bottom: 10px;
-    padding: 15px;
-    border: 5px solid #00448d; /* Zmieniono kolor obramowania na ciemniejszy niebieski */
+    padding: 10px;
     border-radius: 12px;
+}
+
+.info-box {
+    border: 5px solid #00448d;
     background-color: rgba(1, 84, 173, 0.25);
 }
 
 .warning-box {
-    margin-top: 10px;
-    margin-bottom: 10px;
-    padding: 15px;
-    border: 5px solid #7c0000; /* Zmieniono kolor obramowania na ciemniejszy niebieski */
-    border-radius: 12px;
+    border: 5px solid #7c0000;
     background-color: rgba(134, 0, 0, 0.25);
 }
 
 .tip-box {
-    margin-top: 10px;
-    margin-bottom: 10px;
-    padding: 15px;
-    border: 5px solid #d8d400; /* Zmieniono kolor obramowania na ciemniejszy niebieski */
-    border-radius: 12px;
+    border: 5px solid #d8d400;
     background-color: rgba(255, 251, 0, 0.250);
 }
 
 .bestpractices-box {
-    margin-top: 10px;
-    margin-bottom: 10px;
-    padding: 15px;
-    border: 5px solid #1be600; /* Zmieniono kolor obramowania na ciemniejszy niebieski */
-    border-radius: 12px;
-    background-color: hsla(113, 100%, 45%, 0.25);
+    border: 5px solid #1be600;
+    background-color: rgba(27, 230, 0, 0.25);
 }
 
 .info-box i {
     margin-right: 10px;
-    font-size: 1.2em; /* Dostosuj rozmiar ikony */
-    color:#0154ad;
+    font-size: 2.5em;
+    /* Dostosuj rozmiar ikony */
+    color: #0154ad;
 }
 
 .warning-box i {
     margin-right: 10px;
-    font-size: 1.2em; /* Dostosuj rozmiar ikony */
-    color:#c20000;
+    font-size: 2.5em;
+    /* Dostosuj rozmiar ikony */
+    color: #c20000;
 }
 
 .tip-box i {
     margin-right: 10px;
-    font-size: 1.2em; /* Dostosuj rozmiar ikony */
-    color:#fffb00;
+    font-size: 2.5em;
+    /* Dostosuj rozmiar ikony */
+    color: #fffb00;
 }
 
 .bestpractices-box i {
     margin-right: 10px;
-    font-size: 1.2em; /* Dostosuj rozmiar ikony */
-    color:#1be600;
+    font-size: 2.5em;
+    /* Dostosuj rozmiar ikony */
+    color: #1be600;
 }
