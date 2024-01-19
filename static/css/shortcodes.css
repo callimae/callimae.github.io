@@ -37,11 +37,12 @@
 }
 
 /* Single page: info, warning, tip */
-.info-box .warning-box .tip-box .bestpractices-box {
+.info-box, .warning-box, .tip-box, .bestpractices-box {
     display: flex;
     margin-top: 10px;
     margin-bottom: 10px;
     padding: 10px;
+    padding-right: 25px;
     border-radius: 12px;
 }
 

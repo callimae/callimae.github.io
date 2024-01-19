@@ -67,6 +67,18 @@ body {
     margin-bottom: 0px;
 }
 
+/* lists */
+ol {
+    list-style-type: decimal;
+    padding: 20px;
+}
+
+ul {
+    list-style-type: disc;
+    padding: 20px;
+}
+
+
 /* Animation */
 @keyframes emergeFromBlur {
     0% {
