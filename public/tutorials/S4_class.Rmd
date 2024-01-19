@@ -264,6 +264,7 @@ setMethod("setName", "Person", function(object, value) {
 })
 
 ```
+
 {{< info >}}
 Getters and setters, often referred to as accessors and mutators, are methods that are manually defined by the programmer. Their primary role is to control the access and modification of an object's internal data (slots in S4 terms).
 {{< /info >}}

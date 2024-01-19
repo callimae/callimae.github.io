@@ -7,61 +7,9 @@ toc: true
 output: html_document
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-options(crayon.enabled = TRUE)
-```
 
-```{r, echo=FALSE}
 
-add_style <- function(span_style, text_string){
-    sprintf("<span style='%s'>%s</span>", span_style, text_string)
-}
 
-add_new_style <- function(span_style, text_string){
-    phrase <- unlist(regmatches(text_string, gregexpr("'", text_string), invert = T))
-    paste0(phrase[[1]], paste0("'", phrase[[2]], "; ", span_style, "'"), phrase[[3]])
-}
-
-replace_style <- function(style, span_style, text_string){
-    sub(pattern = paste0(style,"[a-zA-Z]+"), x = text_string, replacement = span_style)
-}
-
-add_replace_style <- function(style, text_string, span_style){
-    if(grepl(style, text_string)){  
-        replace_style(span_style = span_style, text_string = text_string, style = style)
-    }else{
-        if(grepl(x = text_string, pattern = "style")){
-            add_new_style(span_style = span_style, text_string = text_string)
-        }else{
-            add_style(span_style = span_style, text_string = text_string)
-        }
-    }
-}    
-#rmdCrayon
-
-blue <- function(text_string){
-    style = "color:"
-    col = "blue"
-    span_style = paste0(style, col, collapse = "")
-    add_replace_style(style = style, span_style = span_style, text_string = text_string)
-}
-
-red <- function(text_string){
-    style = "color:"
-    col = "red"
-    span_style = paste0(style, col, collapse = "")
-    add_replace_style(style = style, span_style = span_style, text_string = text_string)
-}
-
-bold <- function(text_string){
-    style = "font-weight:"
-    col = "bold"
-    span_style = paste0(style, col, collapse = "")
-    add_replace_style(style = style, span_style = span_style, text_string = text_string)
-}
-
-```
 
 ## Introduction
 
@@ -73,7 +21,8 @@ When tackling specific programming challenges, we often look for the right tools
 
 The simplest class can be created in the following way:
 
-```{r}
+
+```r
 setClass(
     Class = "Person",
     slots = list(
@@ -89,9 +38,19 @@ Upon execution, class is already registered in S4 system. First part is 'Person'
 
 Because class is already registered, we can initialize it with:
 
-```{r}
+
+```r
 person <- new("Person", name = "Ezio Accinore", age = 36)
 person
+```
+
+```
+## An object of class "Person"
+## Slot "name":
+## [1] "Ezio Accinore"
+## 
+## Slot "age":
+## [1] 36
 ```
 
 After execution, we receive structured list of previously defined slots. Simple and **elegante**.
@@ -100,15 +59,39 @@ After execution, we receive structured list of previously defined slots. Simple 
 
 First, we will start with generic function. It is 'template' which can be used by different classes:
 
-```{r}
+
+```r
 setGeneric("describe", def = function(object) standardGeneric("describe"))
+```
+
+```
+## [1] "describe"
+```
+
+```r
 describe
+```
+
+```
+## standardGeneric for "describe" defined from package ".GlobalEnv"
+## 
+## function (object) 
+## standardGeneric("describe")
+## <environment: 0x55d624526788>
+## Methods may be defined for arguments: object
+## Use  showMethods(describe)  for currently available ones.
 ```
 
 From the executed code we can read that to check if there are any existing methods exists `showMethods(describe)` should be used. Let us do that:
 
-```{r}
+
+```r
 showMethods(describe)
+```
+
+```
+## Function: describe (package .GlobalEnv)
+## <No methods>
 ```
 
 No methods are defined, which is not surprising as we did not defined any. Why do we need them?
@@ -121,16 +104,22 @@ Now, consider the expression `turtle + cow`. Without any defined context, it's u
 
 In the R programming language, this concept of methods allows us to define specific actions for objects of different classes. For example, after introducing a generic function like `describe`, we can specify how it should behave when applied to an object of the "Person" class.
 
-```{r}
+
+```r
 setMethod("describe", signature(object = "Person"), function(object) {
     cat(paste("This is", object@name, "who is", object@age, "years old.\n"))
 })
 describe(person)
 ```
+
+```
+## This is Ezio Accinore who is 36 years old.
+```
 Note, that in order to refer to elements in the *object* we are using `@`.
 Now, instead of going further immediately, we can make this text just a little more fancy:
 
-```{r results='asis'}
+
+```r
 setMethod("describe", signature(object = "Person"), function(object) {
     full_text <- paste(" This is", (object@name), 
                        "who is", (object@age), 
@@ -141,11 +130,19 @@ setMethod("describe", signature(object = "Person"), function(object) {
         full_text, "\n",
         paste0(rep("x-", times = floor(nchars/2)), collapse = ""), "\n")
 })
-
 ```
 
-```{r}
+
+```r
 describe(person)
+```
+
+```
+##  x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x- 
+## 
+##   This is Ezio Accinore who is 36 years old.
+##  
+##  x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-
 ```
 
 ## Inheritance
@@ -160,7 +157,8 @@ Now, imagine further modifying this hammer by adding an axe blade. This new tool
 
 In the world of R's S4 system, this idea translates into using the contains argument in the setClass function. Let's say we have our basic Person class. Now, we want to create an Employee class that has everything a Person has, but with some added features:
 
-```{r}
+
+```r
 setClass(
   "Employee",
   slots = list(
@@ -173,20 +171,44 @@ setClass(
 
 So, our Employee is still a person (inherits name and age slots from Person), but with a job (position) and a paycheck (salary). Let's create this new class:
 
-```{r}
+
+```r
 employee <- new("Employee", name = "John Doe", age = 28, position = "Analyst", salary = 5000)
 employee
 ```
 
+```
+## An object of class "Employee"
+## Slot "position":
+## [1] "Analyst"
+## 
+## Slot "salary":
+## [1] 5000
+## 
+## Slot "name":
+## [1] "John Doe"
+## 
+## Slot "age":
+## [1] 28
+```
+
 As you can see, we have added all arguments from previously created class "Person" and new class "Employee". What is interesting, we can still use previously created method for class Person, on the class Employee. 
 
-```{r results="asis"}
+
+```r
 describe(employee)
 ```
 
+ x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x- 
+
+  This is John Doe who is 28 years old.
+ 
+ x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x- 
+
 Since we have a new class, we can add new method of descriptions, more suitable for our new class:
 
-```{r}
+
+```r
 setMethod("describe", signature(object = "Employee"), function(object){
     full_text <- paste(" This is", object@name, 
                        "who is", object@age, 
@@ -201,18 +223,32 @@ setMethod("describe", signature(object = "Employee"), function(object){
 
 describe(employee)
 ```
+
+```
+##  x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x- 
+## 
+##   This is John Doe who is 28 years old. He is Analyst and earns 5000 $.
+##  
+##  x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-
+```
 ### Methods without a Generic? Not Possible!
 In the S4 system, you cannot define a method without first establishing a generic function. Think of the generic function as a template or a blueprint. When you call a method, R looks for this blueprint to understand the expected behavior and then dispatches to the specific method associated with the object's class.
 
 Let's see what happens when we try to define a method without its corresponding generic:
-```{r error=TRUE}
+
+```r
 # This will throw an error because we haven't defined a generic function for 'ncharName'
 setMethod("ncharName", signature(object = "Person"), function(object){
     cat(object@name, "contains: ", nchar(object@name), "characters", "\n")
 })
 ```
+
+```
+## Error in setMethod("ncharName", signature(object = "Person"), function(object) {: no existing definition for function 'ncharName'
+```
 To remedy this, we'll first set up a generic function for ncharName. In this generic, we'll also include some default behavior to be executed when a specific method for a class isn't found:
-```{r results='asis'}
+
+```r
 setGeneric("ncharName", def = function(object){
     cat("<---Here starts the output from generic function--->\n")
     cat("Here we set the default behaviour for this generic function. \n
@@ -222,20 +258,59 @@ setGeneric("ncharName", def = function(object){
 })
 ```
 
-```{r error=TRUE}
+[1] "ncharName"
+
+
+```r
 ncharName(person)
 ```
+
+```
+## <---Here starts the output from generic function--->
+## Here we set the default behaviour for this generic function. 
+## 
+##         It shows class then dispatches to appropriate method if such exists. 
+## Class:  Person
+```
+
+```
+## Error in (function (classes, fdef, mtable) : unable to find an inherited method for function 'ncharName' for signature '"Person"'
+```
 Upon execution, but without method set, we receive only part defined in generic. Now, With the generic in place, we can define our method for the 'Person' class:
-```{r}
+
+```r
 setMethod("ncharName", signature(object = "Person"), function(object){
     cat("\n <---Here starts the output from the method--->\n")
     cat(object@name, "contains: ", nchar(object@name), "characters", "\n")
 })
 ncharName(person)
 ```
+
+```
+## <---Here starts the output from generic function--->
+## Here we set the default behaviour for this generic function. 
+## 
+##         It shows class then dispatches to appropriate method if such exists. 
+## Class:  Person 
+## 
+##  <---Here starts the output from the method--->
+## Ezio Accinore contains:  13 characters
+```
 Then, when method is undefined, we will see this:
-```{r}
+
+```r
 ncharName(employee)
+```
+
+```
+## <---Here starts the output from generic function--->
+## Here we set the default behaviour for this generic function. 
+## 
+##         It shows class then dispatches to appropriate method if such exists. 
+## Class:  Employee 
+## 
+##  <---Here starts the output from the method--->
+## John Doe contains:  8 characters
 ```
 
 ## Accessors and Mutators in S4
@@ -245,9 +320,16 @@ In S4, we use specific methods to get or set the values of slots:
 
 #### **Accessor (Getter)** 
 Retrieves the value of a slot *name*. 
-```{r}
-setGeneric("getName", function(object) standardGeneric("getName"))
 
+```r
+setGeneric("getName", function(object) standardGeneric("getName"))
+```
+
+```
+## [1] "getName"
+```
+
+```r
 setMethod("getName", "Person", function(object) {
     return(object@name)
 })
@@ -255,14 +337,20 @@ setMethod("getName", "Person", function(object) {
 
 #### **Mutator (Setter)** 
 Sets a new value for a slot.
-```{r}
-setGeneric("setName", function(object, value) standardGeneric("setName"))
 
+```r
+setGeneric("setName", function(object, value) standardGeneric("setName"))
+```
+
+```
+## [1] "setName"
+```
+
+```r
 setMethod("setName", "Person", function(object, value) {
     object@name <- value
     return(object)
 })
-
 ```
 
 {{< info >}}
