@@ -6,6 +6,7 @@
     top: 0; /* Umieszcza nagłówek na samej górze strony */
     left: 0; /* Umieszcza nagłówek na lewej stronie */
     z-index: 1000; /* Upewnia się, że nagłówek jest zawsze na wierzchu */
+    height: 9vh;
 }
 
 .nav-link {
