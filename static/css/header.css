@@ -136,10 +136,14 @@ header {
 
 #progress-bar {
     position: fixed;
-    top: 10.5vh;
+    top: 10vh;
     left: 0;
     width: 0;
     height: 5px;
     background-color: #65ff46;
     z-index: 1001;
+<<<<<<< HEAD
 } 
+=======
+} 
+>>>>>>> 7d57deca6a895576521dd5f78a962e761a175cfb
