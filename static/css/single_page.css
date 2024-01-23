@@ -10,6 +10,17 @@
     /* Odstępy, żeby kontener nie przylegał bezpośrednio do krawędzi strony. */
 }
 
+/* lists */
+.single-content-container ol {
+    list-style-type: decimal;
+    padding: 20px;
+}
+
+.single-content-container ul {
+    list-style-type: disc;
+    padding: 20px;
+}
+
 .highlight {
     margin-top: 15px; /* Zwiększa odstęp powyżej bloku kodu */
     margin-bottom: 15px; /* Zwiększa odstęp poniżej bloku kodu */
